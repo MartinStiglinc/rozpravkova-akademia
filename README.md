@@ -19,10 +19,12 @@ Potom otvorte [http://127.0.0.1:43127](http://127.0.0.1:43127) alebo [http://127
 ## Súbory
 
 - `index.html` — titulná stránka
-- `story.html` — šablóna podstránky rozprávky (prvý príbeh *Prečo musíme spať*)
-- `styles.css` — spoločný dizajn titulky aj rozprávok
+- `stories/story.html` — šablóna podstránky rozprávky
+- `stories/` — rozprávky (prvý príbeh *Prečo musíme spať*)
+- `categories/` — landing pages kategórií
+- `categories/category-template.html` — šablóna novej kategórie
+- `styles.css` — spoločný dizajn titulky, kategórií aj rozprávok
 - `script.js` — otváranie, zatváranie a klávesnicové ovládanie mobilného menu
-- `stories/` — priečinok pre budúce súbory rozprávok
 
 ## Šablóna rozprávky
 
@@ -35,8 +37,13 @@ Text rozprávky vkladajte v `story.html` medzi komentáre:
 
 Pri kopírovaní do `/stories/` zmeňte cesty na `../styles.css`, `../script.js` a `../index.html`.
 
+## Šablóna kategórie
+
+Novú kategóriu vytvoríte skopírovaním `categories/category-template.html`. Na `body` nastavte jednu z tried `theme-blue`, `theme-green`, `theme-purple`, `theme-pink` alebo `theme-orange`.
+
 ## Pripravené na ilustrácie
 
 - široký hero placeholder na titulke
 - veľký cover blok na podstránke rozprávky
 - pomerové bloky na kartách rozprávok (16 / 10)
+- hero, karty a odporúčaná rozprávka na stránkach kategórií (`data-illustration`)
