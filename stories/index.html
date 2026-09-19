@@ -95,7 +95,7 @@
             </p>
             <p class="badge library-count-badge">
               Aktuálne dostupné:
-              <span id="library-total-count">20 rozprávok</span>
+              <span id="library-total-count"></span>
             </p>
           </div>
 
@@ -128,9 +128,6 @@
                 <label for="filter-age">Filtrovanie podľa veku</label>
                 <select class="filter-control" id="filter-age" name="vek">
                   <option value="">Všetky vekové kategórie</option>
-                  <option value="4-6">4 až 6 rokov</option>
-                  <option value="6-8">6 až 8 rokov</option>
-                  <option value="8-10">8 až 10 rokov</option>
                 </select>
               </div>
 
@@ -138,11 +135,6 @@
                 <label for="filter-category">Filtrovanie podľa kategórie</label>
                 <select class="filter-control" id="filter-category" name="kategoria">
                   <option value="">Všetky kategórie</option>
-                  <option value="ludske-telo">Ľudské telo</option>
-                  <option value="priroda">Príroda</option>
-                  <option value="vesmir">Vesmír</option>
-                  <option value="emocie">Emócie</option>
-                  <option value="veda">Veda</option>
                 </select>
               </div>
 
@@ -163,7 +155,7 @@
 
             <div class="filter-toolbar">
               <p class="results-count" id="results-status" aria-live="polite">
-                Zobrazených rozprávok: <span id="results-count">20</span>
+                Zobrazených rozprávok: <span id="results-count">0</span>
               </p>
               <button class="btn btn-secondary" type="reset" id="filter-reset">
                 Vymazať filtre
@@ -179,376 +171,12 @@
 
           <!--
             AKO PRIDAŤ NOVÚ ROZPRÁVKU
-            1. Skopírujte existujúci <article class="story-card">.
-            2. Nastavte data-category (ludske-telo | priroda | vesmir | emocie | veda).
-            3. Nastavte data-age v tvare min-max, napr. data-age="5-8".
-            4. Nastavte data-title na presný názov rozprávky.
-            5. Upravte chip, ilustráciu, popis, vek, čas a odkaz.
-            Novú kategóriu pridáte aj do <select id="filter-category">.
-            Nový vekový filter pridáte do <select id="filter-age"> (hodnota min-max).
+            1. Otvorte /data/stories.json.
+            2. Pridajte nový objekt s id, title, slug, category, age, readingTime,
+               description, featured, image, url a voliteľnými poľami.
+            3. Karty, filtre aj vyhľadávanie sa vykreslia automaticky.
           -->
-          <div class="stories-grid stories-grid-library" id="stories-grid">
-            <article class="story-card" data-category="ludske-telo" data-age="5-8" data-title="Prečo musíme spať">
-              <a class="story-card-link" href="preco-musime-spat.html" aria-label="Čítať rozprávku Prečo musíme spať">
-                <div class="story-media media-sleep" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-blue">Ľudské telo</span>
-                  <h3>Prečo musíme spať</h3>
-                  <p>Lili a Sofi navštívia Kráľovstvo Spánku a zistia, čo telo a mozog robia počas noci.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 8 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="ludske-telo" data-age="6-9" data-title="Ako funguje srdce">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako funguje srdce">
-                <div class="story-media media-heart" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-blue">Ľudské telo</span>
-                  <h3>Ako funguje srdce</h3>
-                  <p>Malá kvapka krvi sa vydá na dobrodružnú cestu cez celé ľudské telo.</p>
-                  <p class="story-meta">
-                    <span>Vek: 6 až 9 rokov</span>
-                    <span>Čas: 8 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="ludske-telo" data-age="4-7" data-title="Prečo si umývame zuby">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Prečo si umývame zuby">
-                <div class="story-media media-teeth" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-blue">Ľudské telo</span>
-                  <h3>Prečo si umývame zuby</h3>
-                  <p>Zúbok z dolnej rady vysvetlí, prečo kefka a pasta zachraňujú úsmev.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 7 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="ludske-telo" data-age="5-8" data-title="Ako telo bojuje proti chorobám">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako telo bojuje proti chorobám">
-                <div class="story-media media-immune" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-blue">Ľudské telo</span>
-                  <h3>Ako telo bojuje proti chorobám</h3>
-                  <p>Malí obrancovia v krvi ukážu, ako telo zvláda prechladnutie a chrípku.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 8 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="priroda" data-age="4-8" data-title="Prečo prší">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Prečo prší">
-                <div class="story-media media-rain" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-green">Príroda</span>
-                  <h3>Prečo prší</h3>
-                  <p>Malá kvapka vody vyrazí na cestu od oblaku až k zemi a vysvetlí kolobeh vody.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="priroda" data-age="4-8" data-title="Ako vzniká dúha">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako vzniká dúha">
-                <div class="story-media media-rainbow" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-green">Príroda</span>
-                  <h3>Ako vzniká dúha</h3>
-                  <p>Zvedavá dažďová kvapka odhalí deťom tajomstvo farebnej oblohy.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="priroda" data-age="5-8" data-title="Tajomstvo včiel">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Tajomstvo včiel">
-                <div class="story-media media-bees" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-green">Príroda</span>
-                  <h3>Tajomstvo včiel</h3>
-                  <p>Včielka Medka ukáže, ako úľ, kvety a med držia záhradu pri živote.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 8 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="priroda" data-age="4-7" data-title="Kam miznú listy na jeseň">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Kam miznú listy na jeseň">
-                <div class="story-media media-leaves" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-green">Príroda</span>
-                  <h3>Kam miznú listy na jeseň</h3>
-                  <p>Javorový lístok sa vyberie na posledný tanec vetra a zistí, prečo stromy zaspávajú.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 7 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="vesmir" data-age="5-9" data-title="Prečo svieti Mesiac">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Prečo svieti Mesiac">
-                <div class="story-media media-moon" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-purple">Vesmír</span>
-                  <h3>Prečo svieti Mesiac</h3>
-                  <p>Nočná výprava vysvetlí, odkiaľ Mesiac získava svoje tajomné svetlo.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 9 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="vesmir" data-age="4-8" data-title="Ako vzniká deň a noc">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako vzniká deň a noc">
-                <div class="story-media media-daynight" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-purple">Vesmír</span>
-                  <h3>Ako vzniká deň a noc</h3>
-                  <p>Zem sa pretáča ako obrovská točňa a ukáže, prečo striedame svetlo a tmu.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="vesmir" data-age="6-10" data-title="Výprava na Mars">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Výprava na Mars">
-                <div class="story-media media-mars" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-purple">Vesmír</span>
-                  <h3>Výprava na Mars</h3>
-                  <p>Malá raketa vezme deti na červenú planétu plnú kráterov a veľkých otázok.</p>
-                  <p class="story-meta">
-                    <span>Vek: 6 až 10 rokov</span>
-                    <span>Čas: 8 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="vesmir" data-age="5-9" data-title="Cesta okolo Slnka">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Cesta okolo Slnka">
-                <div class="story-media media-sun" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-purple">Vesmír</span>
-                  <h3>Cesta okolo Slnka</h3>
-                  <p>Planéty sa vydajú na preteky okolo Slnka a vysvetlia, ako vzniká rok.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 9 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="emocie" data-age="5-8" data-title="Kam sa schováva strach">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Kam sa schováva strach">
-                <div class="story-media media-fear" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-pink">Emócie</span>
-                  <h3>Kam sa schováva strach</h3>
-                  <p>Malý strach sa ukáže ako sprievodca, ktorý chce deti ochrániť, nie vystrašiť.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 8 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="emocie" data-age="4-8" data-title="Hnevák a pokojná riečka">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Hnevák a pokojná riečka">
-                <div class="story-media media-anger" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-pink">Emócie</span>
-                  <h3>Hnevák a pokojná riečka</h3>
-                  <p>Hnevák sa naučí, že veľké pocity sa dajú premeniť na pokojný prúd.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="emocie" data-age="4-8" data-title="Tajomstvo kamarátstva">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Tajomstvo kamarátstva">
-                <div class="story-media media-friendship" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-pink">Emócie</span>
-                  <h3>Tajomstvo kamarátstva</h3>
-                  <p>Dve deti objavia, že priateľstvo rastie vďaka zdieľaniu, počúvaniu a odvahe.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="emocie" data-age="4-7" data-title="Dievčatko ktoré sa bálo škôlky">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Dievčatko ktoré sa bálo škôlky">
-                <div class="story-media media-kindergarten" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-pink">Emócie</span>
-                  <h3>Dievčatko ktoré sa bálo škôlky</h3>
-                  <p>Prvý deň v škôlke sa zmení na príbeh o odvahe, kým rastie nové sebavedomie.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 7 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="veda" data-age="5-8" data-title="Kúzelný magnet">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Kúzelný magnet">
-                <div class="story-media media-magnet" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-orange">Veda</span>
-                  <h3>Kúzelný magnet</h3>
-                  <p>Dva magnety ukážu, prečo sa niekedy priťahujú a inokedy od seba utekajú.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="veda" data-age="5-9" data-title="Ako lietajú lietadlá">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako lietajú lietadlá">
-                <div class="story-media media-planes" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-orange">Veda</span>
-                  <h3>Ako lietajú lietadlá</h3>
-                  <p>Malé lietadielko vysvetlí, ako vzduch dvíha krídla a drží ich nad oblakmi.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 9 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="veda" data-age="6-9" data-title="Dobrodružstvo malej kvapky elektriny">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Dobrodružstvo malej kvapky elektriny">
-                <div class="story-media media-electricity" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-orange">Veda</span>
-                  <h3>Dobrodružstvo malej kvapky elektriny</h3>
-                  <p>Iskrička prejde káblom, žiarovkou aj vypínačom a ukáže, odkiaľ berieme svetlo.</p>
-                  <p class="story-meta">
-                    <span>Vek: 6 až 9 rokov</span>
-                    <span>Čas: 8 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card" data-category="veda" data-age="4-8" data-title="Prečo sa topí ľad">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Prečo sa topí ľad">
-                <div class="story-media media-ice" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-orange">Veda</span>
-                  <h3>Prečo sa topí ľad</h3>
-                  <p>Snehová vločka zistí, čo sa stane, keď teplo premení ľad späť na vodu.</p>
-                  <p class="story-meta">
-                    <span>Vek: 4 až 8 rokov</span>
-                    <span>Čas: 6 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-          </div>
-
+          <div class="stories-grid stories-grid-library" id="stories-grid" data-stories-grid="catalog"></div>
           <div class="stories-empty" id="stories-empty" hidden role="status">
             <p class="stories-empty-icon" aria-hidden="true">🔍</p>
             <p class="stories-empty-title">Nenašli sa žiadne rozprávky.</p>
@@ -597,6 +225,6 @@
     </footer>
 
     <script src="../script.js"></script>
-    <script src="library.js"></script>
+    <script type="module" src="../js/catalog.js"></script>
   </body>
 </html>
