@@ -1252,6 +1252,18 @@ body.menu-open {
   letter-spacing: -0.02em;
 }
 
+.story-placeholder {
+  margin: 0.25rem 0 0.5rem;
+  padding: 1.2rem 1.3rem 1.35rem;
+  border: 2px dashed rgba(109, 93, 252, 0.28);
+  border-radius: 1.25rem;
+  background: rgba(109, 93, 252, 0.05);
+}
+
+.story-placeholder h2 {
+  margin-top: 0;
+}
+
 .story-prose ul,
 .story-prose ol {
   margin: 1.3em 0;

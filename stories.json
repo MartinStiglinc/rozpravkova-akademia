@@ -1,0 +1,238 @@
+{
+  "categories": {
+    "ludske-telo": {
+      "id": "ludske-telo",
+      "name": "Ľudské telo",
+      "url": "../categories/ludske-telo.html",
+      "chip": "chip-blue",
+      "emoji": "🧠",
+      "relatedLead": "Ďalšie príbehy o ľudskom tele."
+    },
+    "priroda": {
+      "id": "priroda",
+      "name": "Príroda",
+      "url": "../categories/priroda.html",
+      "chip": "chip-green",
+      "emoji": "🌿",
+      "relatedLead": "Ďalšie príbehy o prírode."
+    },
+    "vesmir": {
+      "id": "vesmir",
+      "name": "Vesmír",
+      "url": "../categories/vesmir.html",
+      "chip": "chip-purple",
+      "emoji": "🌙",
+      "relatedLead": "Ďalšie príbehy o vesmíre."
+    },
+    "emocie": {
+      "id": "emocie",
+      "name": "Emócie",
+      "url": "../categories/emocie.html",
+      "chip": "chip-pink",
+      "emoji": "💗",
+      "relatedLead": "Ďalšie príbehy o emóciách."
+    },
+    "veda": {
+      "id": "veda",
+      "name": "Veda",
+      "url": "../categories/veda.html",
+      "chip": "chip-orange",
+      "emoji": "🔬",
+      "relatedLead": "Ďalšie príbehy o vede."
+    }
+  },
+  "stories": [
+    {
+      "title": "Prečo musíme spať",
+      "category": "ludske-telo",
+      "description": "Lili a Sofi navštívia Kráľovstvo Spánku a objavia tajomstvá rastu, energie a fungovania mozgu počas noci.",
+      "age": "5 až 8 rokov",
+      "readingTime": "7 minút",
+      "image": "media-sleep",
+      "url": "/stories/preco-musime-spat.html",
+      "seoDescription": "Poučná rozprávka o spánku pre deti od 5 do 8 rokov. Lili a Sofi objavia Kráľovstvo Spánku a zistia, prečo spánok potrebujeme.",
+      "lesson": [
+        "Počas spánku telo rastie",
+        "Mozog si ukladá nové informácie",
+        "Spánok dopĺňa energiu",
+        "Dobrý spánok potrebujú deti aj dospelí"
+      ],
+      "questions": [
+        "Prečo si myslíš, že musíme spať?",
+        "Čo robí mozog počas spánku?",
+        "Ako sa cítiš po dobrej noci?"
+      ]
+    },
+    {
+      "title": "Ako funguje srdce",
+      "category": "ludske-telo",
+      "description": "Malá kvapka krvi sa vydá na dobrodružnú cestu cez celé ľudské telo.",
+      "age": "6 až 9 rokov",
+      "readingTime": "8 minút",
+      "image": "media-heart",
+      "url": "/stories/ako-funguje-srdce.html"
+    },
+    {
+      "title": "Prečo si umývame zuby",
+      "category": "ludske-telo",
+      "description": "Zúbok z dolnej rady vysvetlí, prečo kefka a pasta zachraňujú úsmev.",
+      "age": "4 až 7 rokov",
+      "readingTime": "6 minút",
+      "image": "media-teeth",
+      "url": "/stories/preco-si-umyvame-zuby.html"
+    },
+    {
+      "title": "Ako telo bojuje proti chorobám",
+      "category": "ludske-telo",
+      "description": "Malí obrancovia v krvi ukážu, ako telo zvláda prechladnutie a chrípku.",
+      "age": "5 až 8 rokov",
+      "readingTime": "7 minút",
+      "image": "media-immune",
+      "url": "/stories/ako-telo-bojuje-proti-chorobam.html"
+    },
+    {
+      "title": "Prečo prší",
+      "category": "priroda",
+      "description": "Malá kvapka vody vyrazí na cestu od oblaku až k zemi a vysvetlí kolobeh vody.",
+      "age": "4 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-rain",
+      "url": "/stories/preco-prsi.html"
+    },
+    {
+      "title": "Ako vzniká dúha",
+      "category": "priroda",
+      "description": "Zvedavá dažďová kvapka odhalí deťom tajomstvo farebnej oblohy.",
+      "age": "4 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-rainbow",
+      "url": "/stories/ako-vznika-duha.html"
+    },
+    {
+      "title": "Tajomstvo včiel",
+      "category": "priroda",
+      "description": "Včielka Medka ukáže, ako úľ, kvety a med držia záhradu pri živote.",
+      "age": "5 až 8 rokov",
+      "readingTime": "7 minút",
+      "image": "media-bees",
+      "url": "/stories/tajomstvo-vciel.html"
+    },
+    {
+      "title": "Kam miznú listy na jeseň",
+      "category": "priroda",
+      "description": "Javorový lístok sa vyberie na posledný tanec vetra a zistí, prečo stromy zaspávajú.",
+      "age": "4 až 7 rokov",
+      "readingTime": "6 minút",
+      "image": "media-leaves",
+      "url": "/stories/kam-miznu-listy-na-jesen.html"
+    },
+    {
+      "title": "Prečo svieti Mesiac",
+      "category": "vesmir",
+      "description": "Nočná výprava vysvetlí, odkiaľ Mesiac získava svoje tajomné svetlo.",
+      "age": "5 až 9 rokov",
+      "readingTime": "7 minút",
+      "image": "media-moon",
+      "url": "/stories/preco-svieti-mesiac.html"
+    },
+    {
+      "title": "Ako vzniká deň a noc",
+      "category": "vesmir",
+      "description": "Zem sa pretáča ako obrovská točňa a ukáže, prečo striedame svetlo a tmu.",
+      "age": "4 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-daynight",
+      "url": "/stories/ako-vznika-den-a-noc.html"
+    },
+    {
+      "title": "Výprava na Mars",
+      "category": "vesmir",
+      "description": "Malá raketa vezme deti na červenú planétu plnú kráterov a veľkých otázok.",
+      "age": "6 až 10 rokov",
+      "readingTime": "8 minút",
+      "image": "media-mars",
+      "url": "/stories/vyprava-na-mars.html"
+    },
+    {
+      "title": "Cesta okolo Slnka",
+      "category": "vesmir",
+      "description": "Planéty sa vydajú na preteky okolo Slnka a vysvetlia, ako vzniká rok.",
+      "age": "5 až 9 rokov",
+      "readingTime": "7 minút",
+      "image": "media-sun",
+      "url": "/stories/cesta-okolo-slnka.html"
+    },
+    {
+      "title": "Kam sa schováva strach",
+      "category": "emocie",
+      "description": "Malý strach sa ukáže ako sprievodca, ktorý chce deti ochrániť, nie vystrašiť.",
+      "age": "5 až 8 rokov",
+      "readingTime": "7 minút",
+      "image": "media-fear",
+      "url": "/stories/kam-sa-schovava-strach.html"
+    },
+    {
+      "title": "Hnevák a pokojná riečka",
+      "category": "emocie",
+      "description": "Hnevák sa naučí, že veľké pocity sa dajú premeniť na pokojný prúd.",
+      "age": "4 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-anger",
+      "url": "/stories/hnevak-a-pokojna-riecka.html"
+    },
+    {
+      "title": "Tajomstvo kamarátstva",
+      "category": "emocie",
+      "description": "Dve deti objavia, že priateľstvo rastie vďaka zdieľaniu, počúvaniu a odvahe.",
+      "age": "4 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-friendship",
+      "url": "/stories/tajomstvo-kamaratstva.html"
+    },
+    {
+      "title": "Dievčatko ktoré sa bálo škôlky",
+      "category": "emocie",
+      "description": "Prvý deň v škôlke sa zmení na príbeh o odvahe, kým rastie nové sebavedomie.",
+      "age": "4 až 7 rokov",
+      "readingTime": "7 minút",
+      "image": "media-kindergarten",
+      "url": "/stories/dievcatko-ktore-sa-balo-skolky.html"
+    },
+    {
+      "title": "Kúzelný magnet",
+      "category": "veda",
+      "description": "Dva magnety ukážu, prečo sa niekedy priťahujú a inokedy od seba utekajú.",
+      "age": "5 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-magnet",
+      "url": "/stories/kuzelny-magnet.html"
+    },
+    {
+      "title": "Ako lietajú lietadlá",
+      "category": "veda",
+      "description": "Malé lietadielko vysvetlí, ako vzduch dvíha krídla a drží ich nad oblakmi.",
+      "age": "5 až 9 rokov",
+      "readingTime": "7 minút",
+      "image": "media-planes",
+      "url": "/stories/ako-lietaju-lietadla.html"
+    },
+    {
+      "title": "Dobrodružstvo malej kvapky elektriny",
+      "category": "veda",
+      "description": "Iskrička prejde káblom, žiarovkou aj vypínačom a ukáže, odkiaľ berieme svetlo.",
+      "age": "6 až 9 rokov",
+      "readingTime": "8 minút",
+      "image": "media-electricity",
+      "url": "/stories/dobrodruzstvo-malej-kvapky-elektriny.html"
+    },
+    {
+      "title": "Prečo sa topí ľad",
+      "category": "veda",
+      "description": "Snehová vločka zistí, čo sa stane, keď teplo premení ľad späť na vodu.",
+      "age": "4 až 8 rokov",
+      "readingTime": "6 minút",
+      "image": "media-ice",
+      "url": "/stories/preco-sa-topi-lad.html"
+    }
+  ]
+}

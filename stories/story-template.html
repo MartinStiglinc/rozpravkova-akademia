@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="no-js" lang="sk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{PAGE_TITLE}}</title>
+    <meta
+      name="description"
+      content="{{META_DESCRIPTION}}"
+    >
+    <meta name="theme-color" content="#6d5dfc">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{OG_TITLE}}">
+    <meta
+      property="og:description"
+      content="{{OG_DESCRIPTION}}"
+    >
+    <!-- Canonical URL je placeholder — po nasadení zmeňte na skutočnú adresu webu. -->
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="page-story">
+    <!--
+      VYGENEROVANÁ STRÁNKA ROZPRÁVKY
+      Zdroj údajov: stories.json
+      Šablóna: stories/story-template.html
+      Generátor: node scripts/generate-stories.js
+      Text rozprávky vložte do stories/content/{slug}.html
+      alebo priamo medzi komentáre STORY CONTENT START a STORY CONTENT END.
+    -->
+    <a class="skip-link" href="#obsah">Preskočiť na obsah</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-bar">
+        <a class="logo" href="../index.html">
+          <svg class="logo-mark" viewBox="0 0 40 32" width="36" height="29" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.5 6.2c4.2-.9 8.1.1 12.5 2.4V27c-4.2-1.9-8.3-2.9-12.5-2.1V6.2Zm33 0V24.9c-4.2-.8-8.3.2-12.5 2.1V8.6c4.4-2.3 8.3-3.3 12.5-2.4Z"></path>
+            <path fill="currentColor" opacity="0.55" d="M20 8.6c.4-.2.8-.3 1.2-.5v18.4c-.4.2-.8.4-1.2.6-.4-.2-.8-.4-1.2-.6V8.1c.4.2.8.3 1.2.5Z"></path>
+          </svg>
+          <span>Rozprávková Akadémia</span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Hlavné menu">
+          <ul class="nav-list">
+            <li><a href="../index.html">Domov</a></li>
+            <li><a href="index.html">Rozprávky</a></li>
+            <li><a href="../index.html#kategorie">Kategórie</a></li>
+            <li><a href="../index.html#o-projekte">O projekte</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn-primary header-cta" href="#podpora">Podporiť projekt</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          id="menu-toggle"
+          aria-label="Otvoriť menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="menu-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav class="container" aria-label="Mobilné menu">
+          <ul class="mobile-nav-list">
+            <li><a href="../index.html">Domov</a></li>
+            <li><a href="index.html">Rozprávky</a></li>
+            <li><a href="../index.html#kategorie">Kategórie</a></li>
+            <li><a href="../index.html#o-projekte">O projekte</a></li>
+            <li><a class="btn btn-primary mobile-cta" href="#podpora">Podporiť projekt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="obsah">
+      <section class="story-hero" aria-labelledby="story-title">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Drobičková navigácia">
+            <ol>
+              <li><a href="../index.html">Domov</a></li>
+              <li><a href="../index.html#rozpravky">Rozprávky</a></li>
+              <li><a href="{{CATEGORY_URL}}">{{CATEGORY_NAME}}</a></li>
+              <li aria-current="page"><span>{{STORY_TITLE}}</span></li>
+            </ol>
+          </nav>
+
+          <div class="story-cover {{STORY_IMAGE}}" aria-hidden="true">
+            <span class="story-cover-label">Priestor pre ilustráciu rozprávky</span>
+          </div>
+
+          <div class="story-hero-copy">
+            <ul class="story-facts">
+              <li>
+                <span class="story-fact-label">Kategória</span>
+                <a class="chip {{CATEGORY_CHIP}} story-fact-chip" href="{{CATEGORY_URL}}"><span aria-hidden="true">{{CATEGORY_EMOJI}}</span> {{CATEGORY_NAME}}</a>
+              </li>
+              <li>
+                <span class="story-fact-label">Vek</span>
+                <span class="story-fact-value">{{STORY_AGE}}</span>
+              </li>
+              <li>
+                <span class="story-fact-label">Čas čítania</span>
+                <span class="story-fact-value">{{STORY_READING_TIME}}</span>
+              </li>
+            </ul>
+            <h1 id="story-title">{{STORY_TITLE}}</h1>
+            <p class="story-hero-lead">
+              {{STORY_DESCRIPTION}}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-story-body" aria-label="Text rozprávky">
+        <div class="story-narrow">
+          <article class="story-prose">
+            <!-- STORY CONTENT START -->
+{{STORY_CONTENT}}
+            <!-- STORY CONTENT END -->
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-learn" aria-labelledby="learn-heading">
+        <div class="story-narrow">
+          <div class="learn-panel">
+            <h2 id="learn-heading">Čo sme sa naučili?</h2>
+{{LEARN_BLOCK}}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-talk" aria-labelledby="talk-heading">
+        <div class="story-narrow">
+          <div class="talk-panel">
+            <h2 id="talk-heading">Skúste sa spolu porozprávať</h2>
+{{TALK_BLOCK}}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-related" aria-labelledby="related-heading">
+        <div class="container">
+          <div class="section-intro">
+            <h2 id="related-heading">Súvisiace rozprávky</h2>
+            <p class="section-lead">{{RELATED_LEAD}}</p>
+          </div>
+
+          <div class="stories-grid stories-grid-related">
+{{RELATED_CARDS}}
+          </div>
+        </div>
+      </section>
+
+      <nav class="story-pager-wrap" aria-label="Navigácia medzi rozprávkami">
+        <div class="container story-pager">
+{{PAGER_LINKS}}
+        </div>
+      </nav>
+
+      <section class="section section-support" id="podpora" aria-labelledby="podpora-heading">
+        <div class="container">
+          <div class="support-panel">
+            <h2 id="podpora-heading">Páčila sa vám táto rozprávka?</h2>
+            <p>Podporte vznik ďalších príbehov pre zvedavé deti.</p>
+            <a class="btn btn-light" href="#">Podporiť projekt</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="kontakt">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="logo logo-footer" href="../index.html">
+            <svg class="logo-mark" viewBox="0 0 40 32" width="32" height="26" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M3.5 6.2c4.2-.9 8.1.1 12.5 2.4V27c-4.2-1.9-8.3-2.9-12.5-2.1V6.2Zm33 0V24.9c-4.2-.8-8.3.2-12.5 2.1V8.6c4.4-2.3 8.3-3.3 12.5-2.4Z"></path>
+              <path fill="currentColor" opacity="0.55" d="M20 8.6c.4-.2.8-.3 1.2-.5v18.4c-.4.2-.8.4-1.2.6-.4-.2-.8-.4-1.2-.6V8.1c.4.2.8.3 1.2.5Z"></path>
+            </svg>
+            <span>Rozprávková Akadémia</span>
+          </a>
+          <p>Rozprávky, ktoré deťom vysvetľujú svet.</p>
+        </div>
+
+        <nav aria-label="Pätička">
+          <ul class="footer-links">
+            <li><a href="../index.html#rozpravky">Rozprávky</a></li>
+            <li><a href="../index.html#kategorie">Kategórie</a></li>
+            <li><a href="../index.html#o-projekte">O projekte</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container footer-meta">
+        <p>© 2026 Rozprávková Akadémia</p>
+        <p>Vytvorené pre zvedavé deti a ich rodičov.</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

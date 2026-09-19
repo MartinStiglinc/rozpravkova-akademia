@@ -19,8 +19,12 @@ Potom otvorte [http://127.0.0.1:43127](http://127.0.0.1:43127) alebo [http://127
 ## Súbory
 
 - `index.html` — titulná stránka
-- `stories/story.html` — šablóna podstránky rozprávky
-- `stories/` — rozprávky (prvý príbeh *Prečo musíme spať*)
+- `stories.json` — zdroj údajov pre všetky rozprávky
+- `stories/story-template.html` — šablóna podstránky rozprávky
+- `stories/story.html` — ručná kópia šablóny
+- `stories/` — vygenerované HTML stránky rozprávok
+- `stories/content/` — skutočný text rozprávky (ak už existuje)
+- `scripts/generate-stories.js` — vygeneruje všetky stránky zo `stories.json`
 - `categories/` — landing pages kategórií
 - `categories/category-template.html` — šablóna novej kategórie
 - `styles.css` — spoločný dizajn titulky, kategórií aj rozprávok
@@ -28,14 +32,21 @@ Potom otvorte [http://127.0.0.1:43127](http://127.0.0.1:43127) alebo [http://127
 
 ## Šablóna rozprávky
 
-Text rozprávky vkladajte v `story.html` medzi komentáre:
+Stránky rozprávok sa generujú zo `stories.json` a `stories/story-template.html`:
+
+```bash
+node scripts/generate-stories.js
+```
+
+Skutočný text vložte do `stories/content/{slug}.html` a znova spustite generátor.
+Prípadne ho vložte priamo medzi komentáre na vygenerovanej stránke:
 
 ```html
 <!-- STORY CONTENT START -->
 <!-- STORY CONTENT END -->
 ```
 
-Pri kopírovaní do `/stories/` zmeňte cesty na `../styles.css`, `../script.js` a `../index.html`.
+Súvisiace rozprávky a predchádzajúca / ďalšia rozprávka sa berú z poradia a kategórií v `stories.json`.
 
 ## Šablóna kategórie
 

@@ -17,8 +17,8 @@
       content="Poučná rozprávka o spánku pre deti od 5 do 8 rokov. Lili a Sofi objavia Kráľovstvo Spánku a zistia, prečo spánok potrebujeme."
     >
     <!-- Canonical URL je placeholder — po nasadení zmeňte na skutočnú adresu webu. -->
-    <link rel="canonical" href="https://example.com/story.html">
-    <meta property="og:url" content="https://example.com/story.html">
+    <link rel="canonical" href="https://example.com/stories/preco-musime-spat.html">
+    <meta property="og:url" content="https://example.com/stories/preco-musime-spat.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,12 +29,12 @@
   </head>
   <body class="page-story">
     <!--
-      ŠABLÓNA ROZPRÁVKY
-      1. Skopírujte tento súbor do /stories/nazov-suboru.html
-         (napr. preco-musime-spat.html, ako-funguje-srdce.html).
-      2. Upravte cesty na ../styles.css, ../script.js a ../index.html.
-      3. Vymeňte SEO, breadcrumb, hero, poučenie, otázky, related karty a prev/next.
-      4. Text rozprávky vložte medzi komentáre STORY CONTENT START a STORY CONTENT END.
+      VYGENEROVANÁ STRÁNKA ROZPRÁVKY
+      Zdroj údajov: stories.json
+      Šablóna: stories/story-template.html
+      Generátor: node scripts/generate-stories.js
+      Text rozprávky vložte do stories/content/{slug}.html
+      alebo priamo medzi komentáre STORY CONTENT START a STORY CONTENT END.
     -->
     <a class="skip-link" href="#obsah">Preskočiť na obsah</a>
 
@@ -225,8 +225,6 @@ A zatiaľ čo spali, v Kráľovstve Spánku sa rozsvietili svetlá a tisíce šk
 Koniec.</p>
 
 <p>🌙 Poučenie: Keď spíme, naše telo rastie, mozog si ukladá nové veci a získavame energiu na ďalší deň. To platí pre deti aj pre dospelých. Preto je spánok jedným z najväčších kúziel na svete. ✨</p>
-            
-            
             <!-- STORY CONTENT END -->
           </article>
         </div>
@@ -292,12 +290,12 @@ Koniec.</p>
         <div class="container">
           <div class="section-intro">
             <h2 id="related-heading">Súvisiace rozprávky</h2>
-            <p class="section-lead">Ďalšie príbehy o ľudskom tele, ktoré nadväzujú na nočné dobrodružstvo.</p>
+            <p class="section-lead">Ďalšie príbehy o ľudskom tele.</p>
           </div>
 
           <div class="stories-grid stories-grid-related">
             <article class="story-card">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako funguje srdce">
+              <a class="story-card-link" href="ako-funguje-srdce.html" aria-label="Čítať rozprávku Ako funguje srdce">
                 <div class="story-media media-heart" aria-hidden="true">
                   <span class="story-media-label">Priestor pre ilustráciu</span>
                 </div>
@@ -315,25 +313,7 @@ Koniec.</p>
             </article>
 
             <article class="story-card">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Ako telo bojuje proti chorobám">
-                <div class="story-media media-immune" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
-                </div>
-                <div class="story-body">
-                  <span class="chip chip-blue">Ľudské telo</span>
-                  <h3>Ako telo bojuje proti chorobám</h3>
-                  <p>Malí obrancovia v krvi ukážu, ako telo zvláda prechladnutie a chrípku.</p>
-                  <p class="story-meta">
-                    <span>Vek: 5 až 8 rokov</span>
-                    <span>Čas: 7 minút</span>
-                  </p>
-                  <span class="story-cta">Čítať rozprávku</span>
-                </div>
-              </a>
-            </article>
-
-            <article class="story-card">
-              <a class="story-card-link" href="#" aria-label="Čítať rozprávku Prečo si umývame zuby">
+              <a class="story-card-link" href="preco-si-umyvame-zuby.html" aria-label="Čítať rozprávku Prečo si umývame zuby">
                 <div class="story-media media-teeth" aria-hidden="true">
                   <span class="story-media-label">Priestor pre ilustráciu</span>
                 </div>
@@ -349,14 +329,31 @@ Koniec.</p>
                 </div>
               </a>
             </article>
+
+            <article class="story-card">
+              <a class="story-card-link" href="ako-telo-bojuje-proti-chorobam.html" aria-label="Čítať rozprávku Ako telo bojuje proti chorobám">
+                <div class="story-media media-immune" aria-hidden="true">
+                  <span class="story-media-label">Priestor pre ilustráciu</span>
+                </div>
+                <div class="story-body">
+                  <span class="chip chip-blue">Ľudské telo</span>
+                  <h3>Ako telo bojuje proti chorobám</h3>
+                  <p>Malí obrancovia v krvi ukážu, ako telo zvláda prechladnutie a chrípku.</p>
+                  <p class="story-meta">
+                    <span>Vek: 5 až 8 rokov</span>
+                    <span>Čas: 7 minút</span>
+                  </p>
+                  <span class="story-cta">Čítať rozprávku</span>
+                </div>
+              </a>
+            </article>
           </div>
         </div>
       </section>
 
       <nav class="story-pager-wrap" aria-label="Navigácia medzi rozprávkami">
         <div class="container story-pager">
-          <a class="story-pager-link" href="#">← Predchádzajúca rozprávka</a>
-          <a class="story-pager-link story-pager-next" href="#">Ďalšia rozprávka →</a>
+          <a class="story-pager-link story-pager-next" href="ako-funguje-srdce.html">Ďalšia rozprávka →</a>
         </div>
       </nav>
 
