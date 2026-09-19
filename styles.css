@@ -56,6 +56,18 @@ body {
   min-height: 100vh;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 img,
 svg {
   max-width: 100%;
@@ -508,6 +520,61 @@ button {
   padding: clamp(3rem, 6vw, 5.25rem) 0;
 }
 
+.section-stats {
+  padding-top: 0;
+  background: var(--color-background);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.2rem 1.25rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(109, 93, 252, 0.1);
+  text-align: center;
+}
+
+.stat-card strong {
+  font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.4rem);
+  line-height: 1.1;
+  color: var(--color-primary-dark);
+}
+
+.stat-card span {
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.stories-error {
+  margin: 0;
+  padding: clamp(1.4rem, 3vw, 2rem) 1.25rem;
+  text-align: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(109, 93, 252, 0.12);
+}
+
+.stories-error-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.stories-error p + p {
+  margin-top: 0.4rem;
+  color: var(--color-muted);
+}
+
 .section-categories {
   background: var(--color-surface);
 }
@@ -688,6 +755,16 @@ button {
   overflow: hidden;
 }
 
+.story-media img,
+.featured-media img,
+.story-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .story-media-label {
   position: absolute;
   left: 50%;
@@ -738,6 +815,12 @@ button {
   background:
     radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.65), transparent 26%),
     linear-gradient(135deg, #a5b4fc 0%, #7dd3fc 52%, #fde68a 100%);
+}
+
+.media-default {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.5), transparent 28%),
+    linear-gradient(135deg, #c4b5fd 0%, #93c5fd 52%, #f9a8d4 100%);
 }
 
 .story-body {
@@ -956,6 +1039,10 @@ button {
 }
 
 @media (min-width: 720px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .stories-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1647,6 +1734,8 @@ body.menu-open {
 }
 
 .featured-media {
+  position: relative;
+  overflow: hidden;
   margin: 0;
   min-height: clamp(12rem, 38vw, 22rem);
 }
