@@ -1151,6 +1151,29 @@ button {
     max-width: none;
     flex: 0 1 auto;
   }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(18rem, 0.92fr) minmax(20rem, 1.08fr);
+    align-items: center;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    text-align: left;
+  }
+
+  .hero-copy .hero-title,
+  .hero-copy .hero-lead {
+    margin-inline: 0;
+  }
+
+  .hero-copy .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .hero-art,
+  .hero-art.has-illustration {
+    margin-top: 0;
+    max-width: none;
+  }
 }
 
 @media (min-width: 1200px) {
