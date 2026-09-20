@@ -22,6 +22,14 @@
     <!-- Canonical URL je placeholder — po nasadení zmeňte na skutočnú adresu webu. -->
     <link rel="canonical" href="https://example.com/">
     <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://example.com/images/hero/hero-main.webp">
+    <meta property="og:image:alt" content="Magická kniha Rozprávkovej Akadémie, dve sestry a múdry škriatok objavujú svet vedomostí.">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:width" content="1536">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://example.com/images/hero/hero-main.webp">
+    <meta name="twitter:image:alt" content="Magická kniha Rozprávkovej Akadémie, dve sestry a múdry škriatok objavujú svet vedomostí.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -82,32 +90,34 @@
     <main id="obsah">
       <section class="hero" aria-labelledby="hero-heading">
         <div class="container hero-inner">
-          <p class="badge">Vzdelávanie cez rozprávky</p>
-          <h1 id="hero-heading">
-            <span class="hero-name">Rozprávková Akadémia</span>
-            <span class="hero-title">Rozprávky, ktoré deťom vysvetľujú svet</span>
-          </h1>
-          <p class="hero-lead">
-            Veda, príroda, emócie a životné lekcie ukryté v dobrodružných príbehoch pre deti od 4 do 10 rokov.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="stories/preco-musime-spat.html">Začať čítať</a>
-            <a class="btn btn-secondary" href="#kategorie">Objaviť kategórie</a>
+          <div class="hero-copy">
+            <p class="badge">Vzdelávanie cez rozprávky</p>
+            <h1 id="hero-heading">
+              <span class="hero-name">Rozprávková Akadémia</span>
+              <span class="hero-title">Rozprávky, ktoré deťom vysvetľujú svet</span>
+            </h1>
+            <p class="hero-lead">
+              Veda, príroda, emócie a životné lekcie ukryté v dobrodružných príbehoch pre deti od 4 do 10 rokov.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="stories/preco-musime-spat.html">Začať čítať</a>
+              <a class="btn btn-secondary" href="#kategorie">Objaviť kategórie</a>
+            </div>
           </div>
 
-          <div class="hero-art" aria-hidden="true">
-            <span class="spark spark-one"></span>
-            <span class="spark spark-two"></span>
-            <span class="spark spark-three"></span>
-            <span class="blob blob-one"></span>
-            <span class="blob blob-two"></span>
-            <div class="storybook">
-              <div class="storybook-page storybook-page-left"></div>
-              <div class="storybook-spine"></div>
-              <div class="storybook-page storybook-page-right"></div>
-            </div>
-            <p class="hero-art-caption">Priestor pre hlavnú ilustráciu</p>
-          </div>
+          <figure class="hero-art has-illustration">
+            <img
+              class="hero-illustration"
+              src="images/hero/hero-main.webp"
+              srcset="images/hero/hero-main-768.webp 768w, images/hero/hero-main.webp 1536w"
+              sizes="(max-width: 1023px) 92vw, min(640px, 48vw)"
+              width="1536"
+              height="1024"
+              alt="Magická kniha Rozprávkovej Akadémie, dve sestry a múdry škriatok objavujú svet vedomostí."
+              decoding="async"
+              fetchpriority="high"
+            >
+          </figure>
         </div>
       </section>
 
