@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v1";
+const CACHE_KEY = "ra-stories-cache-v2";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -11,6 +11,22 @@ const CATEGORY_CHIPS = {
   "Vesmír": "chip-purple",
   "Emócie": "chip-pink",
   "Veda": "chip-orange"
+};
+
+// Only slugs with real files in /images are rendered. Add an entry when a new illustration lands.
+const ILLUSTRATION_META = {
+  "preco-musime-spat": {
+    alt: "Lili a Sofi objavujú Kráľovstvo Spánku.",
+    width: 1536,
+    height: 1024,
+    cardSuffix: "-card"
+  },
+  "ako-funguje-srdce": {
+    alt: "Lili, Sofi a múdry škriatok objavujú Srdcový hrad a krvinkových poslov.",
+    width: 1536,
+    height: 1024,
+    cardSuffix: "-card"
+  }
 };
 
 const MEDIA_BY_SLUG = {
@@ -181,6 +197,68 @@ export function mediaClassForStory(story) {
   return MEDIA_BY_SLUG[story.slug] || "media-default";
 }
 
+function cardImagePath(imagePath, suffix) {
+  if (!imagePath || !suffix) {
+    return "";
+  }
+
+  return String(imagePath).replace(/(\.[a-z0-9]+)$/i, suffix + "$1");
+}
+
+export function illustrationForStory(story) {
+  if (!story || !story.image || !ILLUSTRATION_META[story.slug]) {
+    return null;
+  }
+
+  const meta = ILLUSTRATION_META[story.slug];
+
+  return {
+    src: story.image,
+    cardSrc: cardImagePath(story.image, meta.cardSuffix),
+    alt: meta.alt,
+    width: meta.width,
+    height: meta.height
+  };
+}
+
+export function attachStoryIllustration(media, story, options) {
+  const settings = options || {};
+  const illustration = illustrationForStory(story);
+
+  if (!media || !illustration) {
+    return false;
+  }
+
+  const image = document.createElement("img");
+  const fullSrc = resolveSitePath(illustration.src);
+
+  image.src = settings.useCard && illustration.cardSrc
+    ? resolveSitePath(illustration.cardSrc)
+    : fullSrc;
+  image.alt = settings.decorative ? "" : illustration.alt;
+  image.width = illustration.width;
+  image.height = illustration.height;
+  image.decoding = "async";
+
+  if (settings.lazy !== false) {
+    image.loading = "lazy";
+  }
+
+  if (illustration.cardSrc) {
+    image.srcset = resolveSitePath(illustration.cardSrc) + " 800w, " + fullSrc + " 1536w";
+    image.sizes = settings.sizes || "(max-width: 720px) 92vw, (max-width: 1100px) 44vw, 360px";
+  }
+
+  image.addEventListener("error", function () {
+    image.remove();
+    media.classList.remove("has-illustration");
+  });
+
+  media.classList.add("has-illustration");
+  media.appendChild(image);
+  return true;
+}
+
 function readSessionCache() {
   try {
     const raw = window.sessionStorage.getItem(CACHE_KEY);
@@ -347,19 +425,16 @@ export function createStoryCard(story, options) {
   link.href = resolveSitePath(story.url);
   link.setAttribute("aria-label", "Čítať rozprávku " + story.title);
 
-  media.setAttribute("aria-hidden", "true");
+  const hasIllustration = attachStoryIllustration(media, story, {
+    lazy: true,
+    useCard: true,
+    decorative: true
+  });
 
-  if (story.image) {
-    const image = document.createElement("img");
-    image.src = resolveSitePath(story.image);
-    image.alt = "";
-    image.addEventListener("error", function () {
-      image.remove();
-    });
-    media.appendChild(image);
+  if (!hasIllustration) {
+    media.setAttribute("aria-hidden", "true");
+    media.appendChild(createEl("span", "story-media-label", "Priestor pre ilustráciu"));
   }
-
-  media.appendChild(createEl("span", "story-media-label", "Priestor pre ilustráciu"));
 
   body.appendChild(createEl("span", "chip " + chipClassForCategory(story.category), story.category));
   body.appendChild(createEl("h3", "", story.title));

@@ -419,6 +419,24 @@ button {
   padding: clamp(1.5rem, 4vw, 3rem);
 }
 
+.hero-art.has-illustration {
+  min-height: 0;
+  padding: 0;
+  display: block;
+  background: #12081f;
+  max-width: min(100%, 58rem);
+  margin-inline: auto;
+}
+
+.hero-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: inherit;
+}
+
 .blob,
 .spark {
   position: absolute;
@@ -755,6 +773,10 @@ button {
   overflow: hidden;
 }
 
+.story-media.has-illustration {
+  aspect-ratio: 3 / 2;
+}
+
 .story-media img,
 .featured-media img,
 .story-cover img {
@@ -763,6 +785,24 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 38%;
+}
+
+.story-cover.has-illustration img,
+.featured-media.has-illustration img {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.has-illustration > .story-media-label,
+.has-illustration > .story-cover-label,
+.has-illustration > .hero-art-caption {
+  display: none;
 }
 
 .story-media-label {
@@ -1233,6 +1273,24 @@ body.menu-open {
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+}
+
+.story-cover.has-illustration,
+.featured-media.has-illustration {
+  height: auto;
+  min-height: 0;
+}
+
+figure.hero-art,
+figure.story-cover {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.story-cover.has-illustration:not(.featured-media) {
+  max-width: min(100%, 58rem);
+  margin-inline: auto;
 }
 
 .story-cover-label {
@@ -1738,6 +1796,7 @@ body.menu-open {
   overflow: hidden;
   margin: 0;
   min-height: clamp(12rem, 38vw, 22rem);
+  border-radius: 1.4rem;
 }
 
 .featured-copy {

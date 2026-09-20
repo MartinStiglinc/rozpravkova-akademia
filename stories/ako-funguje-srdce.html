@@ -19,6 +19,14 @@
     <!-- Canonical URL je placeholder — po nasadení zmeňte na skutočnú adresu webu. -->
     <link rel="canonical" href="https://example.com/stories/ako-funguje-srdce.html">
     <meta property="og:url" content="https://example.com/stories/ako-funguje-srdce.html">
+    <meta property="og:image" content="https://example.com/images/stories/ako-funguje-srdce.webp">
+    <meta property="og:image:alt" content="Lili, Sofi a múdry škriatok objavujú Srdcový hrad a krvinkových poslov.">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:width" content="1536">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://example.com/images/stories/ako-funguje-srdce.webp">
+    <meta name="twitter:image:alt" content="Lili, Sofi a múdry škriatok objavujú Srdcový hrad a krvinkových poslov.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -88,9 +96,17 @@
             </ol>
           </nav>
 
-          <div class="story-cover media-heart" aria-hidden="true">
-            <span class="story-cover-label">Priestor pre ilustráciu rozprávky</span>
-          </div>
+          <figure class="story-cover media-heart has-illustration">
+            <img
+              src="../images/stories/ako-funguje-srdce.webp"
+              srcset="../images/stories/ako-funguje-srdce-card.webp 800w, ../images/stories/ako-funguje-srdce.webp 1536w"
+              sizes="(max-width: 720px) 100vw, min(1100px, 92vw)"
+              width="1536"
+              height="1024"
+              alt="Lili, Sofi a múdry škriatok objavujú Srdcový hrad a krvinkových poslov."
+              decoding="async"
+            >
+          </figure>
 
           <div class="story-hero-copy">
             <ul class="story-facts">
@@ -296,8 +312,17 @@
           <div class="stories-grid stories-grid-related">
             <article class="story-card">
               <a class="story-card-link" href="preco-musime-spat.html" aria-label="Čítať rozprávku Prečo musíme spať">
-                <div class="story-media media-sleep" aria-hidden="true">
-                  <span class="story-media-label">Priestor pre ilustráciu</span>
+                <div class="story-media media-sleep has-illustration">
+                  <img
+                    src="../images/stories/preco-musime-spat.webp"
+                    srcset="../images/stories/preco-musime-spat-card.webp 800w, ../images/stories/preco-musime-spat.webp 1536w"
+                    sizes="(max-width: 720px) 92vw, (max-width: 1100px) 44vw, 360px"
+                    width="1536"
+                    height="1024"
+                    alt="Lili a Sofi objavujú Kráľovstvo Spánku."
+                    loading="lazy"
+                    decoding="async"
+                  >
                 </div>
                 <div class="story-body">
                   <span class="chip chip-blue">Ľudské telo</span>

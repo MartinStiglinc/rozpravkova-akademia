@@ -5,6 +5,7 @@ import {
   getStoriesByCategory,
   loadStories,
   mediaClassForStory,
+  attachStoryIllustration,
   renderLoadError,
   renderStoryCards,
   resolveSitePath,
@@ -37,20 +38,19 @@ function renderFeaturedStory(container, story) {
   const meta = createEl("p", "story-meta");
   const link = createEl("a", "btn btn-primary", "Prečítať teraz");
 
-  media.setAttribute("aria-hidden", "true");
   media.setAttribute("data-illustration", story.slug + "-featured");
 
-  if (story.image) {
-    const image = document.createElement("img");
-    image.src = resolveSitePath(story.image);
-    image.alt = "";
-    image.addEventListener("error", function () {
-      image.remove();
-    });
-    media.appendChild(image);
-  }
+  const hasIllustration = attachStoryIllustration(media, story, {
+    lazy: true,
+    useCard: false,
+    decorative: false,
+    sizes: "(max-width: 768px) 92vw, min(560px, 46vw)"
+  });
 
-  media.appendChild(createEl("span", "story-cover-label", "Priestor pre ilustráciu"));
+  if (!hasIllustration) {
+    media.setAttribute("aria-hidden", "true");
+    media.appendChild(createEl("span", "story-cover-label", "Priestor pre ilustráciu"));
+  }
 
   copy.appendChild(createEl("p", "badge", "Najobľúbenejšia rozprávka tejto kategórie"));
 
