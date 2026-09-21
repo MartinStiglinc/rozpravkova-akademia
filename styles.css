@@ -326,6 +326,10 @@ button {
   background: var(--color-yellow-soft);
 }
 
+.support-cta {
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -1212,6 +1216,21 @@ button {
   .featured-story:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lift);
+  }
+
+  .support-cta:hover,
+  .support-cta:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary.support-cta:hover,
+  .btn-primary.support-cta:focus-visible {
+    box-shadow: 0 12px 22px rgba(109, 93, 252, 0.34);
+  }
+
+  .btn-light.support-cta:hover,
+  .btn-light.support-cta:focus-visible {
+    box-shadow: 0 10px 20px rgba(28, 39, 64, 0.16);
   }
 }
 
