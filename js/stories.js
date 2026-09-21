@@ -26,6 +26,18 @@ const ILLUSTRATION_META = {
     width: 1536,
     height: 1024,
     cardSuffix: "-card"
+  },
+  "ako-vznika-duha": {
+    alt: "Lili, Sofi a múdry škriatok letia s Kvapinkou popod veľkú dúhu.",
+    width: 1536,
+    height: 1024,
+    cardSuffix: "-card"
+  },
+  "preco-svieti-mesiac": {
+    alt: "Lili, Sofi a múdry škriatok objavujú tajomstvo Mesiaca a odrazeného slnečného svetla.",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card"
   }
 };
 
@@ -245,7 +257,7 @@ export function attachStoryIllustration(media, story, options) {
   }
 
   if (illustration.cardSrc) {
-    image.srcset = resolveSitePath(illustration.cardSrc) + " 800w, " + fullSrc + " 1536w";
+    image.srcset = resolveSitePath(illustration.cardSrc) + " 800w, " + fullSrc + " " + illustration.width + "w";
     image.sizes = settings.sizes || "(max-width: 720px) 92vw, (max-width: 1100px) 44vw, 360px";
   }
 
