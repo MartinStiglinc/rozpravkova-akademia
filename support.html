@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="no-js" lang="sk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Podporte Rozprávkovú Akadémiu</title>
+    <meta
+      name="description"
+      content="Dobrovoľne podporte Rozprávkovú Akadémiu cez PayPal alebo PAYME QR kód. Rozprávky, ilustrácie a vzdelávací obsah zostávajú zdarma."
+    >
+    <meta name="theme-color" content="#6d5dfc">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Podporte Rozprávkovú Akadémiu">
+    <meta
+      property="og:description"
+      content="Dobrovoľne podporte Rozprávkovú Akadémiu cez PayPal alebo PAYME QR kód. Rozprávky, ilustrácie a vzdelávací obsah zostávajú zdarma."
+    >
+    <!-- Canonical URL je placeholder — po nasadení zmeňte na skutočnú adresu webu. -->
+    <link rel="canonical" href="https://example.com/support.html">
+    <meta property="og:url" content="https://example.com/support.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .support-page {
+        max-width: 42rem;
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .support-page h1 {
+        font-size: clamp(1.8rem, 1.15rem + 2.2vw, 2.7rem);
+        line-height: 1.2;
+        letter-spacing: -0.03em;
+        font-weight: 800;
+      }
+
+      .support-page .support-intro {
+        margin-top: 1rem;
+        color: var(--color-muted);
+      }
+
+      .support-page h2 {
+        margin-top: 2.4rem;
+        font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        font-weight: 800;
+      }
+
+      .support-paypal {
+        margin-top: 1.15rem;
+        min-height: 52px;
+        padding: 0.9rem 1.6rem;
+        font-size: 1.05rem;
+      }
+
+      .payme-qr {
+        width: min(100%, 22rem);
+        margin: 1.25rem auto 0;
+        padding: 0.85rem;
+        background: #fff;
+        border-radius: 1.25rem;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .payme-qr img {
+        width: 100%;
+        height: auto;
+      }
+
+      .payme-note {
+        margin-top: 1rem;
+        color: var(--color-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Preskočiť na obsah</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-bar">
+        <a class="logo" href="index.html">
+          <svg class="logo-mark" viewBox="0 0 40 32" width="36" height="29" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M3.5 6.2c4.2-.9 8.1.1 12.5 2.4V27c-4.2-1.9-8.3-2.9-12.5-2.1V6.2Zm33 0V24.9c-4.2-.8-8.3.2-12.5 2.1V8.6c4.4-2.3 8.3-3.3 12.5-2.4Z"></path>
+            <path fill="currentColor" opacity="0.55" d="M20 8.6c.4-.2.8-.3 1.2-.5v18.4c-.4.2-.8.4-1.2.6-.4-.2-.8-.4-1.2-.6V8.1c.4.2.8.3 1.2.5Z"></path>
+          </svg>
+          <span>Rozprávková Akadémia</span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Hlavné menu">
+          <ul class="nav-list">
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="stories/index.html">Rozprávky</a></li>
+            <li><a href="index.html#kategorie">Kategórie</a></li>
+            <li><a href="index.html#o-projekte">O projekte</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn-primary header-cta" href="support.html" data-support-cta aria-label="Podporiť projekt. Otvorí stránku s možnosťami podpory." title="Podporiť projekt">Podporiť projekt</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          id="menu-toggle"
+          aria-label="Otvoriť menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="menu-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <nav class="container" aria-label="Mobilné menu">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="stories/index.html">Rozprávky</a></li>
+            <li><a href="index.html#kategorie">Kategórie</a></li>
+            <li><a href="index.html#o-projekte">O projekte</a></li>
+            <li><a class="btn btn-primary mobile-cta" href="support.html" data-support-cta aria-label="Podporiť projekt. Otvorí stránku s možnosťami podpory." title="Podporiť projekt">Podporiť projekt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="obsah">
+      <section class="section" aria-labelledby="support-heading">
+        <div class="container support-page">
+          <h1 id="support-heading">❤️ Podporte Rozprávkovú Akadémiu</h1>
+          <p class="support-intro">Všetky rozprávky, ilustrácie a vzdelávací obsah na Rozprávkovej Akadémii sú dostupné zdarma pre všetky deti.</p>
+          <p class="support-intro">Ak sa vám projekt páči a chcete pomôcť s tvorbou ďalších rozprávok a ilustrácií, môžete projekt dobrovoľne podporiť.</p>
+
+          <h2>Možnosť 1 – PayPal</h2>
+          <a
+            class="btn btn-primary support-paypal"
+            href="https://paypal.me/rozpravkovaakademia"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Podporiť cez PayPal</a>
+
+          <h2>Možnosť 2 – PAYME QR kód</h2>
+          <figure class="payme-qr">
+            <img
+              src="assets/images/payme-qr.png"
+              width="1030"
+              height="1031"
+              alt="PAYME QR kód na podporu Rozprávkovej Akadémie"
+              decoding="async"
+            >
+          </figure>
+          <p class="payme-note">Naskenujte QR kód vo svojej mobilnej bankovej aplikácii a podporte projekt priamo zo svojho účtu.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="kontakt">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="logo logo-footer" href="index.html">
+            <svg class="logo-mark" viewBox="0 0 40 32" width="32" height="26" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M3.5 6.2c4.2-.9 8.1.1 12.5 2.4V27c-4.2-1.9-8.3-2.9-12.5-2.1V6.2Zm33 0V24.9c-4.2-.8-8.3.2-12.5 2.1V8.6c4.4-2.3 8.3-3.3 12.5-2.4Z"></path>
+              <path fill="currentColor" opacity="0.55" d="M20 8.6c.4-.2.8-.3 1.2-.5v18.4c-.4.2-.8.4-1.2.6-.4-.2-.8-.4-1.2-.6V8.1c.4.2.8.3 1.2.5Z"></path>
+            </svg>
+            <span>Rozprávková Akadémia</span>
+          </a>
+          <p>Rozprávky, ktoré deťom vysvetľujú svet.</p>
+        </div>
+
+        <nav aria-label="Pätička">
+          <ul class="footer-links">
+            <li><a href="stories/index.html">Rozprávky</a></li>
+            <li><a href="index.html#kategorie">Kategórie</a></li>
+            <li><a href="index.html#o-projekte">O projekte</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container footer-meta">
+        <p>© 2026 Rozprávková Akadémia</p>
+        <p>Vytvorené pre zvedavé deti a ich rodičov.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="js/support.js"></script>
+  </body>
+</html>
