@@ -1,13 +1,27 @@
 (function () {
   /**
-   * Jediná adresa platobného odkazu Stripe.
-   * Všetky tlačidlá „Podporiť projekt“ ju preberajú odtiaľto.
+   * Cieľ tlačidiel podpory je stránka support.html.
+   * Relatívna cesta funguje z koreňa aj z priečinkov stories/ a categories/.
    */
-  var STRIPE_PAYMENT_URL = "https://buy.stripe.com/test_7sY14o3sz2cf2Vr4XR2Ry00";
+  var SUPPORT_LABELS = [
+    "Podporiť projekt",
+    "Podporte projekt",
+    "Podporte nás",
+    "Podpora projektu"
+  ];
 
-  var SUPPORT_LABEL = "Podporiť projekt";
-  var ARIA_LABEL = "Podporiť projekt. Otvorí platobnú stránku Stripe v novom okne.";
-  var TITLE = "Podporiť projekt cez Stripe (otvorí sa v novom okne)";
+  var ARIA_LABEL = "Podporiť projekt. Otvorí stránku s možnosťami podpory.";
+  var TITLE = "Podporiť projekt";
+
+  function supportPageHref() {
+    var path = window.location.pathname || "";
+
+    if (/\/(?:stories|categories)\//.test(path)) {
+      return "../support.html";
+    }
+
+    return "support.html";
+  }
 
   function isSupportLink(link) {
     if (!link || link.tagName !== "A") {
@@ -18,7 +32,8 @@
       return true;
     }
 
-    return (link.textContent || "").replace(/\s+/g, " ").trim() === SUPPORT_LABEL;
+    var text = (link.textContent || "").replace(/\s+/g, " ").trim();
+    return SUPPORT_LABELS.indexOf(text) !== -1;
   }
 
   function trackSupportClick() {
@@ -41,9 +56,9 @@
   }
 
   function enhanceSupportLink(link) {
-    link.href = STRIPE_PAYMENT_URL;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
+    link.href = supportPageHref();
+    link.removeAttribute("target");
+    link.removeAttribute("rel");
     link.setAttribute("aria-label", ARIA_LABEL);
     link.title = TITLE;
     link.classList.add("support-cta");
@@ -68,7 +83,7 @@
   }
 
   window.RozpravkovaAkademia = window.RozpravkovaAkademia || {};
-  window.RozpravkovaAkademia.stripePaymentUrl = STRIPE_PAYMENT_URL;
+  window.RozpravkovaAkademia.supportPageUrl = supportPageHref();
   window.RozpravkovaAkademia.enhanceSupportLinks = enhanceSupportLinks;
 
   if (document.readyState === "loading") {
