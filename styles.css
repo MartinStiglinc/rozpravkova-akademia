@@ -1764,6 +1764,20 @@ figure.story-cover {
   padding: clamp(1.5rem, 4vw, 3rem);
 }
 
+.category-hero-art.has-illustration {
+  min-height: 0;
+  padding: 0;
+  display: block;
+}
+
+.category-hero-art.has-illustration .hero-illustration {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
 .page-category .blob-one {
   background: var(--category-hero-blob-a);
 }

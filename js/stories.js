@@ -38,6 +38,11 @@ const ILLUSTRATION_META = {
     width: 1672,
     height: 941,
     cardSuffix: "-card"
+  },
+  "preco-si-umyvame-zuby": {
+    alt: "Lili, Sofi a múdry škriatok objavujú Zúbkové kráľovstvo a dôležitosť čistenia zubov.",
+    width: 1536,
+    height: 1024
   }
 };
 
