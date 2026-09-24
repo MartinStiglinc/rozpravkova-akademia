@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v2";
+const CACHE_KEY = "ra-stories-cache-v3";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -42,7 +42,8 @@ const ILLUSTRATION_META = {
   "preco-si-umyvame-zuby": {
     alt: "Lili, Sofi a múdry škriatok objavujú Zúbkové kráľovstvo a dôležitosť čistenia zubov.",
     width: 1536,
-    height: 1024
+    height: 1024,
+    cardSuffix: "-card"
   }
 };
 
