@@ -54,7 +54,8 @@ const ILLUSTRATION_META = {
   "preco-prsi": {
     alt: "Kvapka a babička Obláčiková sedia na oblaku a pozerajú sa na dážď nad zelenou lúkou.",
     width: 1672,
-    height: 941
+    height: 941,
+    cardSuffix: "-card"
   }
 };
 
@@ -231,7 +232,7 @@ function cardImagePath(imagePath, suffix) {
     return "";
   }
 
-  return String(imagePath).replace(/(\.[a-z0-9]+)$/i, suffix + "$1");
+  return String(imagePath).replace(/\.[a-z0-9]+$/i, suffix + ".webp");
 }
 
 export function illustrationForStory(story) {
