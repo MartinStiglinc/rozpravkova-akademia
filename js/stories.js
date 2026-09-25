@@ -64,11 +64,9 @@ const ILLUSTRATION_META = {
     cardSuffix: "-card"
   },
   "kam-miznu-listy-na-jesen": {
-    alt: "Lili, Sofi a múdry škriatok sedia pod javorom a pozerajú sa na padajúce jesenné listy.",
-    width: 1672,
-    height: 941,
-    cardSuffix: "-card",
-    cardOnly: true
+    alt: "Kam miznú listy na jeseň",
+    width: 800,
+    height: 450
   }
 };
 
@@ -260,8 +258,7 @@ export function illustrationForStory(story) {
     cardSrc: cardImagePath(story.image, meta.cardSuffix),
     alt: meta.alt,
     width: meta.width,
-    height: meta.height,
-    cardOnly: Boolean(meta.cardOnly)
+    height: meta.height
   };
 }
 
@@ -288,7 +285,7 @@ export function attachStoryIllustration(media, story, options) {
     image.loading = "lazy";
   }
 
-  if (illustration.cardSrc && !(settings.useCard && illustration.cardOnly)) {
+  if (illustration.cardSrc) {
     image.srcset = resolveSitePath(illustration.cardSrc) + " 800w, " + fullSrc + " " + illustration.width + "w";
     image.sizes = settings.sizes || "(max-width: 720px) 92vw, (max-width: 1100px) 44vw, 360px";
   }
@@ -472,7 +469,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: true
+    decorative: story.slug !== "kam-miznu-listy-na-jesen"
   });
 
   if (!hasIllustration) {
