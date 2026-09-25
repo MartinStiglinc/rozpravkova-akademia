@@ -60,7 +60,8 @@ const ILLUSTRATION_META = {
   "tajomstvo-vciel": {
     alt: "Včielka Medka ukazuje Lily a Sofi tajomstvo úľa, kvetov a medu",
     width: 1536,
-    height: 1024
+    height: 1024,
+    cardSuffix: "-card"
   }
 };
 
