@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v6";
+const CACHE_KEY = "ra-stories-cache-v7";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -62,6 +62,11 @@ const ILLUSTRATION_META = {
     width: 1536,
     height: 1024,
     cardSuffix: "-card"
+  },
+  "kam-miznu-listy-na-jesen": {
+    alt: "Kam miznú listy na jeseň",
+    width: 800,
+    height: 450
   }
 };
 
@@ -464,7 +469,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: true
+    decorative: story.slug !== "kam-miznu-listy-na-jesen"
   });
 
   if (!hasIllustration) {
