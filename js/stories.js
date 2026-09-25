@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v5";
+const CACHE_KEY = "ra-stories-cache-v6";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -56,6 +56,11 @@ const ILLUSTRATION_META = {
     width: 1672,
     height: 941,
     cardSuffix: "-card"
+  },
+  "tajomstvo-vciel": {
+    alt: "Včielka Medka ukazuje Lily a Sofi tajomstvo úľa, kvetov a medu",
+    width: 1536,
+    height: 1024
   }
 };
 
