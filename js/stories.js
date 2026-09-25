@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v7";
+const CACHE_KEY = "ra-stories-cache-v8";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -64,9 +64,11 @@ const ILLUSTRATION_META = {
     cardSuffix: "-card"
   },
   "kam-miznu-listy-na-jesen": {
-    alt: "Kam miznú listy na jeseň",
-    width: 800,
-    height: 450
+    alt: "Lili, Sofi a múdry škriatok sedia pod javorom a pozerajú sa na padajúce jesenné listy.",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true
   }
 };
 
@@ -258,7 +260,8 @@ export function illustrationForStory(story) {
     cardSrc: cardImagePath(story.image, meta.cardSuffix),
     alt: meta.alt,
     width: meta.width,
-    height: meta.height
+    height: meta.height,
+    cardOnly: Boolean(meta.cardOnly)
   };
 }
 
@@ -285,7 +288,7 @@ export function attachStoryIllustration(media, story, options) {
     image.loading = "lazy";
   }
 
-  if (illustration.cardSrc) {
+  if (illustration.cardSrc && !(settings.useCard && illustration.cardOnly)) {
     image.srcset = resolveSitePath(illustration.cardSrc) + " 800w, " + fullSrc + " " + illustration.width + "w";
     image.sizes = settings.sizes || "(max-width: 720px) 92vw, (max-width: 1100px) 44vw, 360px";
   }
