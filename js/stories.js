@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v12";
+const CACHE_KEY = "ra-stories-cache-v13";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -102,6 +102,13 @@ const ILLUSTRATION_META = {
     cardSuffix: "-card",
     cardOnly: true,
     cardImage: "images/stories/dobrodruzstvo-malej-iskricky-elektriny-card.webp"
+  },
+  "preco-sa-topi-lad": {
+    alt: "Snehová vločka Snehulka a ľadový kamarát Ľadko na zamrznutom jazere.",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true
   }
 };
 
@@ -506,7 +513,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad"
   });
 
   if (!hasIllustration) {
