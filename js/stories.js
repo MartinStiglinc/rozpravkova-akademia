@@ -80,6 +80,13 @@ const ILLUSTRATION_META = {
     width: 1536,
     height: 864,
     cardSuffix: "-card"
+   },
+  "cesta-okolo-slnka": {
+    alt: "Planéty putujúce po obežných dráhach okolo Slnka",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true
   }
 };
 
@@ -483,7 +490,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka"
   });
 
   if (!hasIllustration) {
