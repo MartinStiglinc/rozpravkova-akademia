@@ -75,6 +75,12 @@ const ILLUSTRATION_META = {
     width: 1672,
     height: 941
   },
+  "kuzelny-magnet": {
+    alt: "Lili a Sofi v dielni dedka Majstra objavujú magnetických kamarátov Magnetka a Magnetku.",
+    width: 1536,
+    height: 864,
+    cardSuffix: "-card"
+   },
   "cesta-okolo-slnka": {
     alt: "Planéty putujúce po obežných dráhach okolo Slnka",
     width: 1672,
