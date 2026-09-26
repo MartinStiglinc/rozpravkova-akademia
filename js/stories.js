@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v11";
+const CACHE_KEY = "ra-stories-cache-v12";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -94,6 +94,14 @@ const ILLUSTRATION_META = {
     height: 941,
     cardSuffix: "-card",
     cardOnly: true
+  },
+  "dobrodruzstvo-malej-iskricky-elektriny": {
+    alt: "Malá iskrička Iskra letí káblom z elektrárne do žiarovky, ktorá rozsvieti izbu.",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true,
+    cardImage: "images/stories/dobrodruzstvo-malej-iskricky-elektriny-card.webp"
   }
 };
 
@@ -117,6 +125,7 @@ const MEDIA_BY_SLUG = {
   "kuzelny-magnet": "media-magnet",
   "ako-lietaju-lietadla": "media-planes",
   "dobrodruzstvo-malej-kvapky-elektriny": "media-electricity",
+  "dobrodruzstvo-malej-iskricky-elektriny": "media-electricity",
   "preco-sa-topi-lad": "media-ice"
 };
 
@@ -282,7 +291,7 @@ export function illustrationForStory(story) {
 
   return {
     src: story.image,
-    cardSrc: cardImagePath(story.image, meta.cardSuffix),
+    cardSrc: meta.cardImage || cardImagePath(story.image, meta.cardSuffix),
     alt: meta.alt,
     width: meta.width,
     height: meta.height,
@@ -497,7 +506,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny"
   });
 
   if (!hasIllustration) {
