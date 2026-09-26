@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v8";
+const CACHE_KEY = "ra-stories-cache-v9";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -69,6 +69,11 @@ const ILLUSTRATION_META = {
     height: 941,
     cardSuffix: "-card",
     cardOnly: true
+  },
+  "vyprava-na-mars": {
+    alt: "Výprava na Mars - Lily a Sofi objavujú červenú planétu spolu s raketou Riki",
+    width: 1672,
+    height: 941
   }
 };
 
