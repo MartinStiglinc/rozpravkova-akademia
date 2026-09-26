@@ -5,7 +5,7 @@ import {
   renderLoadError,
   renderStoryCards,
   updateCategoryCounts
-} from "./stories.js";
+} from "./stories.js?v=14";
 
 function setStat(selector, value) {
   const el = document.querySelector(selector);

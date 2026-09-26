@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v13";
+const STORIES_URL = new URL("../data/stories.json?v=14", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v14";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -376,7 +376,7 @@ export async function loadStories() {
       return memoryCache;
     }
 
-    const response = await fetch(STORIES_URL, { cache: "force-cache" });
+    const response = await fetch(STORIES_URL, { cache: "no-cache" });
 
     if (!response.ok) {
       throw new Error("Stories JSON could not be loaded");
