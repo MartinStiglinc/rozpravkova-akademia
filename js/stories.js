@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v10";
+const CACHE_KEY = "ra-stories-cache-v11";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -83,6 +83,13 @@ const ILLUSTRATION_META = {
    },
   "cesta-okolo-slnka": {
     alt: "Planéty putujúce po obežných dráhach okolo Slnka",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true
+  },
+  "ako-lietaju-lietadla": {
+    alt: "Lili, Sofi a modré lietadielko Letko na letisku Rozprávkovej akadémie",
     width: 1672,
     height: 941,
     cardSuffix: "-card",
@@ -490,7 +497,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla"
   });
 
   if (!hasIllustration) {
