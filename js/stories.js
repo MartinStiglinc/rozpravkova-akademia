@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v9";
+const CACHE_KEY = "ra-stories-cache-v10";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -74,6 +74,12 @@ const ILLUSTRATION_META = {
     alt: "Výprava na Mars - Lily a Sofi objavujú červenú planétu spolu s raketou Riki",
     width: 1672,
     height: 941
+  },
+  "kuzelny-magnet": {
+    alt: "Lili a Sofi v dielni dedka Majstra objavujú magnetických kamarátov Magnetka a Magnetku.",
+    width: 1536,
+    height: 864,
+    cardSuffix: "-card"
   }
 };
 
