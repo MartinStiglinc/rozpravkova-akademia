@@ -1,5 +1,5 @@
 const STORIES_URL = new URL("../data/stories.json", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v12";
+const CACHE_KEY = "ra-stories-cache-v13";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -124,7 +124,6 @@ const MEDIA_BY_SLUG = {
   "dievcatko-ktore-sa-balo-skolky": "media-kindergarten",
   "kuzelny-magnet": "media-magnet",
   "ako-lietaju-lietadla": "media-planes",
-  "dobrodruzstvo-malej-kvapky-elektriny": "media-electricity",
   "dobrodruzstvo-malej-iskricky-elektriny": "media-electricity",
   "preco-sa-topi-lad": "media-ice"
 };

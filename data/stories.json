@@ -307,20 +307,20 @@
   },
   {
     "id": 19,
-    "title": "Dobrodružstvo malej kvapky elektriny",
-    "slug": "dobrodruzstvo-malej-kvapky-elektriny",
+    "title": "Dobrodružstvo malej iskričky elektriny",
+    "slug": "dobrodruzstvo-malej-iskricky-elektriny",
     "category": "Veda",
-    "age": "6-9",
-    "readingTime": "8 min",
-    "description": "Iskrička prejde káblom, žiarovkou aj vypínačom a ukáže, odkiaľ berieme svetlo.",
+    "age": "5-8",
+    "readingTime": "6 min",
+    "description": "Malá iskrička Iskra prejde káblom, vypínačom aj žiarovkou a rozsvieti izbu.",
     "featured": false,
-    "image": "images/stories/dobrodruzstvo-malej-kvapky-elektriny.webp",
-    "url": "stories/dobrodruzstvo-malej-kvapky-elektriny.html",
+    "image": "images/stories/dobrodruzstvo-malej-iskry.png",
+    "url": "stories/dobrodruzstvo-malej-iskricky-elektriny.html",
     "audio": null,
     "author": "Rozprávková Akadémia",
-    "publishedDate": "2026-09-19",
-    "difficulty": "medium",
-    "tags": ["elektrina", "energia", "veda"]
+    "publishedDate": "2026-09-26",
+    "difficulty": "easy",
+    "tags": ["elektrina", "svetlo", "veda"]
   },
   {
     "id": 20,
@@ -338,22 +338,5 @@
     "publishedDate": "2026-09-19",
     "difficulty": "easy",
     "tags": ["ľad", "teplo", "voda"]
-  },
-  {
-    "id": 21,
-    "title": "Dobrodružstvo malej iskričky elektriny",
-    "slug": "dobrodruzstvo-malej-iskricky-elektriny",
-    "category": "Veda",
-    "age": "5-8",
-    "readingTime": "6 min",
-    "description": "Malá iskrička Iskra prejde káblom, vypínačom aj žiarovkou a rozsvieti izbu.",
-    "featured": false,
-    "image": "images/stories/dobrodruzstvo-malej-iskry.png",
-    "url": "stories/dobrodruzstvo-malej-iskricky-elektriny.html",
-    "audio": null,
-    "author": "Rozprávková Akadémia",
-    "publishedDate": "2026-09-26",
-    "difficulty": "easy",
-    "tags": ["elektrina", "svetlo", "veda"]
   }
 ]
