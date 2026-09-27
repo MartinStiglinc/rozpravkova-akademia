@@ -37,21 +37,15 @@
   }
 
   function trackSupportClick() {
-    var params = {
-      page_title: document.title,
-      page_path: window.location.pathname
-    };
+    var api = window.RozpravkovaAkademia;
 
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "support_project_click", params);
+    if (!api || api.analyticsConsent !== true || typeof window.gtag !== "function") {
       return;
     }
 
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "support_project_click",
-      page_title: params.page_title,
-      page_path: params.page_path
+    window.gtag("event", "support_project_click", {
+      page_title: document.title,
+      page_path: window.location.pathname
     });
   }
 

@@ -3,22 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Podporte Rozprávkovú Akadémiu</title>
+    <title>Kontakt | Rozprávková akadémia</title>
     <meta
       name="description"
-      content="Dobrovoľne podporte Rozprávkovú Akadémiu cez PayPal alebo PAYME QR kód. Rozprávky, ilustrácie a vzdelávací obsah zostávajú zdarma."
+      content="Kontaktujte Rozprávkovú akadémiu. Napíšte nám svoje otázky, pripomienky alebo návrhy na nové vzdelávacie rozprávky pre deti."
     >
     <meta name="theme-color" content="#6d5dfc">
     <meta property="og:locale" content="sk_SK">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Podporte Rozprávkovú Akadémiu">
+    <meta property="og:title" content="Kontakt | Rozprávková akadémia">
     <meta
       property="og:description"
-      content="Dobrovoľne podporte Rozprávkovú Akadémiu cez PayPal alebo PAYME QR kód. Rozprávky, ilustrácie a vzdelávací obsah zostávajú zdarma."
+      content="Kontaktujte Rozprávkovú akadémiu. Napíšte nám svoje otázky, pripomienky alebo návrhy na nové vzdelávacie rozprávky pre deti."
     >
     <!-- Canonical URL je placeholder — po nasadení zmeňte na skutočnú adresu webu. -->
-    <link rel="canonical" href="https://example.com/support.html">
-    <meta property="og:url" content="https://example.com/support.html">
+    <link rel="canonical" href="https://example.com/kontakt.html">
+    <meta property="og:url" content="https://example.com/kontakt.html">
+    <meta property="og:image" content="https://example.com/images/hero/hero-main.webp">
+    <meta property="og:image:alt" content="Magická kniha Rozprávkovej Akadémie, dve sestry a múdry škriatok objavujú svet vedomostí.">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:width" content="1536">
+    <meta property="og:image:height" content="1024">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://example.com/images/hero/hero-main.webp">
+    <meta name="twitter:image:alt" content="Magická kniha Rozprávkovej Akadémie, dve sestry a múdry škriatok objavujú svet vedomostí.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,61 +34,8 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
-    <style>
-      .support-page {
-        max-width: 42rem;
-        margin-inline: auto;
-        text-align: center;
-      }
-
-      .support-page h1 {
-        font-size: clamp(1.8rem, 1.15rem + 2.2vw, 2.7rem);
-        line-height: 1.2;
-        letter-spacing: -0.03em;
-        font-weight: 800;
-      }
-
-      .support-page .support-intro {
-        margin-top: 1rem;
-        color: var(--color-muted);
-      }
-
-      .support-page h2 {
-        margin-top: 2.4rem;
-        font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.6rem);
-        line-height: 1.3;
-        letter-spacing: -0.02em;
-        font-weight: 800;
-      }
-
-      .support-paypal {
-        margin-top: 1.15rem;
-        min-height: 52px;
-        padding: 0.9rem 1.6rem;
-        font-size: 1.05rem;
-      }
-
-      .payme-qr {
-        width: min(100%, 22rem);
-        margin: 1.25rem auto 0;
-        padding: 0.85rem;
-        background: #fff;
-        border-radius: 1.25rem;
-        box-shadow: var(--shadow-soft);
-      }
-
-      .payme-qr img {
-        width: 100%;
-        height: auto;
-      }
-
-      .payme-note {
-        margin-top: 1rem;
-        color: var(--color-muted);
-      }
-    </style>
   </head>
-  <body>
+  <body class="page-legal">
     <a class="skip-link" href="#obsah">Preskočiť na obsah</a>
 
     <header class="site-header" id="top">
@@ -99,10 +54,11 @@
             <li><a href="stories/index.html">Rozprávky</a></li>
             <li><a href="index.html#kategorie">Kategórie</a></li>
             <li><a href="index.html#o-projekte">O projekte</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
           </ul>
         </nav>
 
+        <a class="btn btn-primary header-cta" href="support.html" data-support-cta aria-label="Podporiť projekt. Otvorí stránku s možnosťami podpory." title="Podporiť projekt">Podporiť projekt</a>
 
         <button
           class="menu-toggle"
@@ -123,39 +79,39 @@
             <li><a href="stories/index.html">Rozprávky</a></li>
             <li><a href="index.html#kategorie">Kategórie</a></li>
             <li><a href="index.html#o-projekte">O projekte</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            
+            <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+            <li><a class="btn btn-primary mobile-cta" href="support.html" data-support-cta aria-label="Podporiť projekt. Otvorí stránku s možnosťami podpory." title="Podporiť projekt">Podporiť projekt</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main id="obsah">
-      <section class="section" aria-labelledby="support-heading">
-        <div class="container support-page">
-          <h1 id="support-heading">❤️ Podporte Rozprávkovú Akadémiu</h1>
-          <p class="support-intro">Všetky rozprávky, ilustrácie a vzdelávací obsah na Rozprávkovej Akadémii sú dostupné zdarma pre všetky deti.</p>
-          <p class="support-intro">Ak sa vám projekt páči a chcete pomôcť s tvorbou ďalších rozprávok a ilustrácií, môžete projekt dobrovoľne podporiť.</p>
+      <section class="section legal-hero" aria-labelledby="page-title">
+        <div class="container legal-page">
+          <h1 id="page-title">Kontakt</h1>
+          <p class="legal-intro">Máte otázku, návrh na novú rozprávku alebo ste na stránke našli niečo, čo by sme mohli zlepšiť? Budeme radi, ak sa nám ozvete.</p>
 
-          <h2>Možnosť 1 – PayPal</h2>
-          <a
-            class="btn btn-primary support-paypal"
-            href="https://paypal.me/rozpravkovaakademia"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Podporiť cez PayPal</a>
+          <section class="legal-section" aria-labelledby="napiste-nam">
+            <h2 id="napiste-nam">Napíšte nám</h2>
+            <p>Kontaktovať nás môžete prostredníctvom e-mailu:</p>
+            <p><a href="mailto:rozpravkova.akademia@gmail.com">rozpravkova.akademia@gmail.com</a></p>
+          </section>
 
-          <h2>Možnosť 2 – PAYME QR kód</h2>
-          <figure class="payme-qr">
-            <img
-              src="assets/images/payme-qr.png"
-              width="1030"
-              height="1031"
-              alt="PAYME QR kód na podporu Rozprávkovej Akadémie"
-              decoding="async"
-            >
-          </figure>
-          <p class="payme-note">Naskenujte QR kód vo svojej mobilnej bankovej aplikácii a podporte projekt priamo zo svojho účtu.</p>
+          <section class="legal-section" aria-labelledby="navrhy">
+            <h2 id="navrhy">Návrhy na nové rozprávky</h2>
+            <p>Chýba vám v Rozprávkovej akadémii zaujímavá téma? Napíšte nám, o čom by si vaše deti chceli prečítať. Možno sa práve váš námet stane inšpiráciou pre novú vzdelávaciu rozprávku.</p>
+          </section>
+
+          <section class="legal-section" aria-labelledby="zlepsovanie">
+            <h2 id="zlepsovanie">Pomôžte nám zlepšovať Rozprávkovú akadémiu</h2>
+            <p>Ak ste našli chybu, nefunkčný odkaz alebo informáciu, ktorú by sme mali upraviť, dajte nám o tom vedieť. Vaša spätná väzba nám pomáha vytvárať lepší a užitočnejší obsah pre deti a rodičov.</p>
+          </section>
+
+          <section class="legal-section" aria-labelledby="podporte">
+            <h2 id="podporte">Podporte projekt</h2>
+            <p>Ak sa vám Rozprávková akadémia páči a chcete podporiť vznik ďalších rozprávok, navštívte stránku <a href="support.html">Podporte nás</a>.</p>
+          </section>
         </div>
       </section>
     </main>
@@ -178,7 +134,7 @@
             <li><a href="stories/index.html">Rozprávky</a></li>
             <li><a href="index.html#kategorie">Kategórie</a></li>
             <li><a href="index.html#o-projekte">O projekte</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
           </ul>
         </nav>
       </div>
