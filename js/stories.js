@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json?v=19", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v19";
+const STORIES_URL = new URL("../data/stories.json?v=20", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v20";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -38,6 +38,14 @@ const ILLUSTRATION_META = {
     width: 1672,
     height: 941,
     cardSuffix: "-card"
+  },
+  "ako-vznika-den-a-noc": {
+    alt: "Ako vzniká deň a noc - Zem ukazuje Lily a Sofi prečo sa strieda svetlo a tma",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true,
+    cardImage: "images/stories/ako-vznika-den-a-noc-card.webp"
   },
   "preco-si-umyvame-zuby": {
     alt: "Lili, Sofi a múdry škriatok objavujú Zúbkové kráľovstvo a dôležitosť čistenia zubov.",
@@ -543,7 +551,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka" && story.slug !== "kam-sa-schovava-strach" && story.slug !== "tajomstvo-kamaratstva" && story.slug !== "dievcatko-ktore-sa-balo-skolky"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka" && story.slug !== "kam-sa-schovava-strach" && story.slug !== "tajomstvo-kamaratstva" && story.slug !== "dievcatko-ktore-sa-balo-skolky" && story.slug !== "ako-vznika-den-a-noc"
   });
 
   if (!hasIllustration) {

@@ -6,7 +6,7 @@ import {
   renderStoryCards,
   slugify,
   storyCountLabel
-} from "./stories.js?v=19";
+} from "./stories.js?v=20";
 
 function fillSelect(select, values, blankLabel) {
   if (!select) {
