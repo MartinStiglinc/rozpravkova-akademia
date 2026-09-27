@@ -11,7 +11,7 @@ import {
   resolveSitePath,
   storyCountLabel,
   updateCategoryCounts
-} from "./stories.js";
+} from "./stories.js?v=14";
 
 function createEl(tag, className, text) {
   const el = document.createElement(tag);
