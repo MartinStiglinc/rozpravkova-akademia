@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json?v=15", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v15";
+const STORIES_URL = new URL("../data/stories.json?v=16", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v16";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -87,6 +87,14 @@ const ILLUSTRATION_META = {
     height: 941,
     cardSuffix: "-card",
     cardOnly: true
+  },
+  "kam-sa-schovava-strach": {
+    alt: "Kam sa schováva strach - Rozprávková akadémia",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true,
+    cardImage: "images/stories/kam-sa-schovava-strach-card.webp"
   },
   "ako-lietaju-lietadla": {
     alt: "Lili, Sofi a modré lietadielko Letko na letisku Rozprávkovej akadémie",
@@ -297,7 +305,7 @@ export function illustrationForStory(story) {
 
   return {
     src: story.image,
-    cardSrc: meta.cardImage || cardImagePath(story.image, meta.cardSuffix),
+    cardSrc: story.cardImage || meta.cardImage || cardImagePath(story.image, meta.cardSuffix),
     alt: meta.alt,
     width: meta.width,
     height: meta.height,
@@ -512,7 +520,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "kam-sa-schovava-strach"
   });
 
   if (!hasIllustration) {
