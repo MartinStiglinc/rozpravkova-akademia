@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json?v=17", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v17";
+const STORIES_URL = new URL("../data/stories.json?v=18", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v18";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -124,6 +124,14 @@ const ILLUSTRATION_META = {
     height: 1024,
     cardSuffix: "-card",
     cardOnly: true
+  },
+  "tajomstvo-kamaratstva": {
+    alt: "Sofia a Lukáš objavujú tajomstvo kamarátstva",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true,
+    cardImage: "images/stories/tajomstvo-kamaratstva-card.webp"
   }
 };
 
@@ -527,7 +535,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka" && story.slug !== "kam-sa-schovava-strach"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka" && story.slug !== "kam-sa-schovava-strach" && story.slug !== "tajomstvo-kamaratstva"
   });
 
   if (!hasIllustration) {
