@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json?v=15", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v15";
+const STORIES_URL = new URL("../data/stories.json?v=16", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v16";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -105,6 +105,13 @@ const ILLUSTRATION_META = {
   },
   "preco-sa-topi-lad": {
     alt: "Snehová vločka Snehulka a ľadový kamarát Ľadko na zamrznutom jazere.",
+    width: 1672,
+    height: 941,
+    cardSuffix: "-card",
+    cardOnly: true
+  },
+  "hnevak-a-pokojna-riecka": {
+    alt: "Hnevák a pokojná riečka",
     width: 1672,
     height: 941,
     cardSuffix: "-card",
@@ -512,7 +519,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka"
   });
 
   if (!hasIllustration) {
