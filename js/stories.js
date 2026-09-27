@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json?v=18", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v18";
+const STORIES_URL = new URL("../data/stories.json?v=19", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v19";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 
@@ -132,6 +132,14 @@ const ILLUSTRATION_META = {
     cardSuffix: "-card",
     cardOnly: true,
     cardImage: "images/stories/tajomstvo-kamaratstva-card.webp"
+  },
+  "dievcatko-ktore-sa-balo-skolky": {
+    alt: "Dievčatko Ema pred škôlkou so zlatým Motýľom Odvahy",
+    width: 1536,
+    height: 1024,
+    cardSuffix: "-card",
+    cardOnly: true,
+    cardImage: "images/stories/dievcatko-ktore-sa-balo-skolky-card.webp"
   }
 };
 
@@ -535,7 +543,7 @@ export function createStoryCard(story, options) {
   const hasIllustration = attachStoryIllustration(media, story, {
     lazy: true,
     useCard: true,
-    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka" && story.slug !== "kam-sa-schovava-strach" && story.slug !== "tajomstvo-kamaratstva"
+    decorative: story.slug !== "kam-miznu-listy-na-jesen" && story.slug !== "cesta-okolo-slnka" && story.slug !== "ako-lietaju-lietadla" && story.slug !== "dobrodruzstvo-malej-iskricky-elektriny" && story.slug !== "preco-sa-topi-lad" && story.slug !== "hnevak-a-pokojna-riecka" && story.slug !== "kam-sa-schovava-strach" && story.slug !== "tajomstvo-kamaratstva" && story.slug !== "dievcatko-ktore-sa-balo-skolky"
   });
 
   if (!hasIllustration) {
