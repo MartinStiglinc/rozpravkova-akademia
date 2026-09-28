@@ -1,0 +1,12 @@
+# Produkčná doména nie je v projekte nastavená.
+# Adresa https://example.com/ je placeholder z canonical URL.
+# Po nasadení ju zmeňte v tomto súbore, v sitemap.xml a v canonical odkazoch.
+
+User-agent: *
+Allow: /
+
+# Šablóny nie sú samostatné verejné stránky.
+Disallow: /stories/story.html
+Disallow: /categories/category-template.html
+
+Sitemap: https://example.com/sitemap.xml
