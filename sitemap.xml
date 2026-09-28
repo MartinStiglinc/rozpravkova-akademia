@@ -1,128 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Produkčná doména zatiaľ nie je v projekte nastavená. Adresy používajú placeholder https://example.com/ z canonical URL. Po nasadení ich zmeňte spolu so Sitemap v robots.txt. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://rozpravkova-akademia.sk/</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/support.html</loc>
+    <loc>https://rozpravkova-akademia.sk/support.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/kontakt.html</loc>
+    <loc>https://rozpravkova-akademia.sk/kontakt.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/ochrana-sukromia.html</loc>
+    <loc>https://rozpravkova-akademia.sk/ochrana-sukromia.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/podmienky-pouzivania.html</loc>
+    <loc>https://rozpravkova-akademia.sk/podmienky-pouzivania.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/categories/emocie.html</loc>
+    <loc>https://rozpravkova-akademia.sk/categories/emocie.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/categories/ludske-telo.html</loc>
+    <loc>https://rozpravkova-akademia.sk/categories/ludske-telo.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/categories/priroda.html</loc>
+    <loc>https://rozpravkova-akademia.sk/categories/priroda.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/categories/veda.html</loc>
+    <loc>https://rozpravkova-akademia.sk/categories/veda.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/categories/vesmir.html</loc>
+    <loc>https://rozpravkova-akademia.sk/categories/vesmir.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/ako-funguje-srdce.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/ako-funguje-srdce.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/ako-lietaju-lietadla.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/ako-lietaju-lietadla.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/ako-telo-bojuje-proti-chorobam.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/ako-telo-bojuje-proti-chorobam.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/ako-vznika-den-a-noc.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/ako-vznika-den-a-noc.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/ako-vznika-duha.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/ako-vznika-duha.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/cesta-okolo-slnka.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/cesta-okolo-slnka.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/dievcatko-ktore-sa-balo-skolky.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/dievcatko-ktore-sa-balo-skolky.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/dobrodruzstvo-malej-iskricky-elektriny.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/dobrodruzstvo-malej-iskricky-elektriny.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/hnevak-a-pokojna-riecka.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/hnevak-a-pokojna-riecka.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/kam-miznu-listy-na-jesen.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/kam-miznu-listy-na-jesen.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/kam-sa-schovava-strach.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/kam-sa-schovava-strach.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/kuzelny-magnet.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/kuzelny-magnet.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/preco-musime-spat.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/preco-musime-spat.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/preco-prsi.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/preco-prsi.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/preco-sa-topi-lad.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/preco-sa-topi-lad.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/preco-si-umyvame-zuby.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/preco-si-umyvame-zuby.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/preco-svieti-mesiac.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/preco-svieti-mesiac.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/tajomstvo-kamaratstva.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/tajomstvo-kamaratstva.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/tajomstvo-vciel.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/tajomstvo-vciel.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
   <url>
-    <loc>https://example.com/stories/vyprava-na-mars.html</loc>
+    <loc>https://rozpravkova-akademia.sk/stories/vyprava-na-mars.html</loc>
     <lastmod>2026-09-27</lastmod>
   </url>
 </urlset>
