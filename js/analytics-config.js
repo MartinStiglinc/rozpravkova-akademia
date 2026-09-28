@@ -1,8 +1,6 @@
 /**
- * Google Analytics 4
- *
- * Sem vložte skutočné Measurement ID vo formáte G-XXXXXXXX (8 až 12 znakov).
- * Prázdna hodnota znamená, že meranie je vypnuté: skript sa nenačíta
+ * Google Analytics 4 Measurement ID.
+ * Prázdna alebo neplatná hodnota meranie vypne: skript sa nenačíta
  * a žiadne analytické údaje sa neodosielajú.
  */
-window.RA_GA_MEASUREMENT_ID = "";
+window.RA_GA_MEASUREMENT_ID = "G-PGCF983S3K";

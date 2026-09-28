@@ -3,8 +3,10 @@
   var GA_ID_PATTERN = /^G-[A-Z0-9]{8,12}$/;
   var root = window.RozpravkovaAkademia = window.RozpravkovaAkademia || {};
   var gaLoaded = false;
+  var defaultConsentSet = false;
   var ui = null;
   var lastFocus = null;
+  var consentListeners = [];
 
   function measurementId() {
     var id = window.RA_GA_MEASUREMENT_ID;
@@ -76,26 +78,52 @@
     });
   }
 
-  function loadAnalytics(id) {
-    if (gaLoaded || !id) {
+  function ensureGtagStub() {
+    window.dataLayer = window.dataLayer || [];
+
+    if (typeof window.gtag !== "function") {
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    }
+  }
+
+  function setDefaultConsent() {
+    if (defaultConsentSet || !measurementId()) {
       return;
     }
 
-    gaLoaded = true;
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag("js", new Date());
+    defaultConsentSet = true;
+    ensureGtagStub();
     window.gtag("consent", "default", {
-      analytics_storage: "granted",
+      analytics_storage: "denied",
       ad_storage: "denied",
       ad_user_data: "denied",
       ad_personalization: "denied",
       functionality_storage: "denied",
       personalization_storage: "denied",
-      security_storage: "granted"
+      security_storage: "granted",
+      wait_for_update: 500
     });
+  }
+
+  function loadAnalytics(id) {
+    ensureGtagStub();
+    window.gtag("consent", "update", {
+      analytics_storage: "granted"
+    });
+
+    if (gaLoaded) {
+      return;
+    }
+
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      gaLoaded = true;
+      return;
+    }
+
+    gaLoaded = true;
+    window.gtag("js", new Date());
     window.gtag("config", id, {
       anonymize_ip: true,
       allow_google_signals: false,
@@ -108,16 +136,23 @@
     document.head.appendChild(script);
   }
 
+  function notifyConsent() {
+    consentListeners.forEach(function (listener) {
+      listener(root.analyticsConsent === true);
+    });
+  }
+
   function applyConsent(granted) {
     var id = measurementId();
     root.analyticsConsent = granted === true && !!id;
 
     if (root.analyticsConsent) {
       loadAnalytics(id);
+      notifyConsent();
       return;
     }
 
-    if (typeof window.gtag === "function") {
+    if (gaLoaded && typeof window.gtag === "function") {
       window.gtag("consent", "update", {
         analytics_storage: "denied",
         ad_storage: "denied",
@@ -127,6 +162,7 @@
     }
 
     clearGaCookies();
+    notifyConsent();
   }
 
   function statusText() {
@@ -255,14 +291,14 @@
     layer.hidden = true;
     layer.innerHTML = [
       '<div class="cookie-banner" role="region" aria-label="Súhlas s cookies">',
-      '<h2 class="cookie-title">Cookies a súkromie</h2>',
-      "<p>Rozprávková akadémia môže po vašom súhlase používať analytické cookies služby Google Analytics 4. Pomáhajú nám vidieť, ktoré stránky sa čítajú, a zlepšovať projekt. Bez súhlasu sa analytické meranie nespustí a základné čítanie rozprávok zostáva dostupné.</p>",
+      '<h2 class="cookie-title">Cookies na Rozprávkovej Akadémii</h2>',
+      "<p>Používame nevyhnutné technológie na fungovanie stránky a s vaším súhlasom analytické cookies Google Analytics, ktoré nám pomáhajú anonymne vyhodnocovať návštevnosť a zisťovať, ktoré rozprávky návštevníci radi čítajú.</p>",
       '<p><a data-cookie-privacy href="#">Viac v ochrane súkromia</a></p>',
       '<div class="cookie-actions">',
-      '<button type="button" class="btn btn-primary" data-cookie-accept>Súhlasím</button>',
-      '<button type="button" class="btn btn-secondary" data-cookie-reject>Nesúhlasím</button>',
-      '<button type="button" class="btn btn-secondary" data-cookie-open-settings>Nastavenia</button>',
+      '<button type="button" class="btn btn-primary cookie-decision" data-cookie-accept>Prijať analytické cookies</button>',
+      '<button type="button" class="btn btn-secondary cookie-decision" data-cookie-reject>Odmietnuť</button>',
       "</div>",
+      '<p class="cookie-settings-row"><button type="button" class="cookie-text-button" data-cookie-open-settings>Nastavenia cookies</button></p>',
       "</div>"
     ].join("");
 
@@ -279,8 +315,8 @@
       '<label for="cookie-analytics"><span>Analytické cookies</span><small>Google Analytics 4 meria návštevnosť až po súhlase. Reklamné cookies nepoužívame.</small></label>',
       "</div>",
       '<div class="cookie-actions">',
-      '<button type="button" class="btn btn-primary" data-cookie-save>Uložiť voľbu</button>',
-      '<button type="button" class="btn btn-secondary" data-cookie-close>Zavrieť</button>',
+      '<button type="button" class="btn btn-primary cookie-decision" data-cookie-save>Uložiť voľbu</button>',
+      '<button type="button" class="btn btn-secondary cookie-decision" data-cookie-close>Zavrieť</button>',
       "</div>",
       "</div>"
     ].join("");
@@ -341,9 +377,19 @@
     };
   }
 
-  var storedConsent = readConsent();
+  root.onAnalyticsConsentChange = function (listener) {
+    if (typeof listener !== "function") {
+      return;
+    }
+
+    consentListeners.push(listener);
+  };
+
   root.analyticsConfigured = !!measurementId();
   root.analyticsConsent = false;
+  setDefaultConsent();
+
+  var storedConsent = readConsent();
 
   if (storedConsent === true && measurementId()) {
     applyConsent(true);

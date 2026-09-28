@@ -2221,6 +2221,32 @@ figure.story-cover {
   margin-top: 1rem;
 }
 
+.cookie-actions .cookie-decision {
+  flex: 1 1 14rem;
+}
+
+.cookie-settings-row {
+  margin-top: 0.85rem;
+}
+
+.cookie-text-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  cursor: pointer;
+}
+
+.cookie-text-button:hover,
+.cookie-text-button:focus-visible {
+  color: var(--color-primary-dark);
+}
+
 .cookie-dialog {
   position: fixed;
   z-index: 90;
