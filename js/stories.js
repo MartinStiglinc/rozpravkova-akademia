@@ -1,5 +1,5 @@
-const STORIES_URL = new URL("../data/stories.json?v=20", import.meta.url).href;
-const CACHE_KEY = "ra-stories-cache-v20";
+const STORIES_URL = new URL("../data/stories.json?v=21", import.meta.url).href;
+const CACHE_KEY = "ra-stories-cache-v21";
 const LOAD_ERROR_TITLE = "Nepodarilo sa načítať rozprávky.";
 const LOAD_ERROR_HINT = "Skúste obnoviť stránku.";
 

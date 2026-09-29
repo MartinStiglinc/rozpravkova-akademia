@@ -11,10 +11,10 @@
     var path = window.location.pathname || "";
 
     if (/\/(?:stories|categories)\//.test(path)) {
-      return "../data/stories.json?v=20";
+      return "../data/stories.json?v=21";
     }
 
-    return "data/stories.json?v=20";
+    return "data/stories.json?v=21";
   }
 
   function canTrack() {
