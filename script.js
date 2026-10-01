@@ -103,3 +103,21 @@
     desktopQuery.addListener(handleBreakpointChange);
   }
 })();
+
+(function () {
+  var loader = document.currentScript;
+  var script;
+
+  if (!document.body || !document.body.classList.contains("page-story")) {
+    return;
+  }
+
+  if (document.querySelector("script[data-share-story]")) {
+    return;
+  }
+
+  script = document.createElement("script");
+  script.dataset.shareStory = "true";
+  script.src = new URL("js/share-story.js", loader && loader.src ? loader.src : window.location.href).href;
+  document.body.appendChild(script);
+})();
