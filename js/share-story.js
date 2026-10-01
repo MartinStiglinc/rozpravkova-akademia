@@ -261,6 +261,8 @@
 
       if (canNativeShare(data)) {
         navigator.share(data).then(function () {
+          status.textContent = "";
+          window.clearTimeout(statusTimer);
           track("share_story");
         }).catch(function (error) {
           if (error && error.name === "AbortError") {
